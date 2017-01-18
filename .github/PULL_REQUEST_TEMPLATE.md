@@ -3,3 +3,4 @@
 - [ ] URL of the upstream PR present?
 - [ ] URL of the upstream JIRA present?
 - [ ] Description present?
+- [ ] 7.0.z payload ???
