@@ -1,0 +1,5 @@
+- [ ] Commit messages contain a reference to the JBEAP JIRA?
+- [ ] URL of the JBEAP JIRA present?
+- [ ] URL of the upstream PR present?
+- [ ] URL of the upstream JIRA present?
+- [ ] Description present?
