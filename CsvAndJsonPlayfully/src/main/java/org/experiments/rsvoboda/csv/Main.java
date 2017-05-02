@@ -1,7 +1,10 @@
 package org.experiments.rsvoboda.csv;
 
+import com.opencsv.CSVReader;
+
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -23,10 +26,11 @@ public class Main {
 
         String csvStr = "A,B,C,D\n"
                 + "1,2,3,4\n"
-                + "5,6,7,8\n"
+                + "5,6,7,\"8\nadded new line\"\n"
                 + "i,j,k,l\n"
                 + "o,p,q,r";
 
+        System.out.println("in-house CSV version: ");
         try (Reader in = new StringReader(csvStr);) {
             CSV csv = new CSV(true, ',', in);
 
@@ -35,7 +39,6 @@ public class Main {
                 System.out.println("Column names: " + columnNames);
                 System.out.println();
             }
-
             while (csv.hasNext()) {
                 List<String> fields = csv.next();
                 for (int i = 0 ; i < fields.size() ; i++) {
@@ -44,6 +47,18 @@ public class Main {
                 System.out.println();
             }
         }
+
+        System.out.println("opencsv version: ");
+
+        try (Reader in = new StringReader(csvStr);) {
+            CSVReader reader = new CSVReader(in,',');  //      new CSVReader(new FileReader("yourfile.csv"));
+            String[] line;
+            while ((line = reader.readNext()) != null) {
+                System.out.println(Arrays.toString(line));
+            }
+        }
+
+
 
     }
 }
