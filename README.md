@@ -1,4 +1,6 @@
-XXX :)
+Rostislav's Playgroung
+========================
 
-more lines
-even more lines
+[.github](.github) -  pull request template for the repository - PULL_REQUEST_TEMPLATE.md
+
+[ConfigMapUsedInWildFly](ConfigMapUsedInWildFly) - Kubernetes ConfigMap values with Java EE & WildFly
