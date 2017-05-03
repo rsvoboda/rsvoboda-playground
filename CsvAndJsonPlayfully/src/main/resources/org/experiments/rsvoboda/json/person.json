@@ -1,0 +1,22 @@
+{
+  "firstName": "Rostislav",
+  "lastName": "Svoboda",
+  "dateOfBirth": "12-Dec-2012",
+  "localDateOfBirth": {
+    "year": 2012,
+    "month": "DECEMBER",
+    "chronology": {
+      "calendarType": "iso8601",
+      "id": "ISO"
+    },
+    "era": "CE",
+    "monthValue": 12,
+    "dayOfMonth": 12,
+    "dayOfYear": 347,
+    "dayOfWeek": "WEDNESDAY",
+    "leapYear": true
+  },
+  "emails": [
+    "foo@bar.com"
+  ]
+}
