@@ -5,6 +5,8 @@ Jolokia (https://jolokia.org/) is remote JMX with JSON over HTTP, an alternative
 To run Jolokia with JBoss EAP you need to download JVM-Agent version from https://jolokia.org/download.html
 After that you need to configure JAVA_OPTS to add -javaagent and few additional parameter related to JBoss Logging (global package, -Xbootclasspath and java.util.logging.manager property )
 
+In the log of the server you should see something like `Jolokia: Agent started with URL http://127.0.0.1:8778/jolokia/`
+
 Running
 -------------------
 Prerequisites:
@@ -56,3 +58,14 @@ curl http://127.0.0.1:8778/jolokia/read/jboss.as:management-root=server 2>/dev/n
   "status": 200
 }
 ```
+
+Querying
+-------------------
+Syntax for reading data via http GET requests is described in https://jolokia.org/reference/html/protocol.html#get-read
+
+Some examples:
+ * http://127.0.0.1:8778/jolokia/read/java.lang:type=Memory/HeapMemoryUsage/used
+ * http://127.0.0.1:8778/jolokia/read/java.lang:type=Memory
+ * http://127.0.0.1:8778/jolokia/read/java.lang:type=MemoryPool,name=PS%20Old%20Gen/Type/
+ * http://127.0.0.1:8778/jolokia/read/jboss.as:management-root=server
+ * http://127.0.0.1:8778/jolokia/read/jboss.as:management-root=server/suspendState
