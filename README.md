@@ -6,3 +6,5 @@ Rostislav's Playgroung
 [ConfigMapUsedInWildFly](ConfigMapUsedInWildFly) - Kubernetes ConfigMap values with Java EE & WildFly
 
 [CsvAndJsonPlayfully](CsvAndJsonPlayfully) - Experiments with CSV and JSON Serialization / Deserialization
+
+[Jolokia](Jolokia) - JMX with JSON over HTTP
