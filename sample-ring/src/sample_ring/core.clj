@@ -1,6 +1,9 @@
 (ns sample-ring.core
   (:require [ring.adapter.jetty :as jetty]
-            [ring.util.response :as res]))
+            [ring.util.response :as res]
+            [ring.util.response :refer [response]]
+            [ring.middleware.params :refer [wrap-params]]
+            [ring.middleware.keyword-params :refer [wrap-keyword-params]]))
 
 ;;(defn handler [request]
 ;;  {:status 200
@@ -40,7 +43,21 @@
 ;;(defn simple-handler [request] json-res)
 (defn simple-handler [request] (res/content-type json-res "application/json"))
 
+;; Standard middleware vvvv
+
+(defn m-handler [request]
+  (response
+    (str "<h1>One Ring rules them all!</h1>"
+          "<ul><li>Query string: "
+          (:query-string request)
+          "</li><li>Params: "
+          (:params request)
+          "</li></ul>")))
+
 (defn -main []
 ;;  (jetty/run-jetty handler
-  (jetty/run-jetty simple-handler
+;;  (jetty/run-jetty simple-handler
+(jetty/run-jetty (-> m-handler
+                     (wrap-keyword-params)
+                     (wrap-params))
                    {:port 3000}))
