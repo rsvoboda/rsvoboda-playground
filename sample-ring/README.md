@@ -1,14 +1,18 @@
 # sample-ring
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure experiment with Leiningen.
+
+## Initial setup
+```
+wget -O ~/Downloads/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && chmod a+x ~/Downloads/lein
+
+~/Downloads/lein new sample-ring
+```
 
 ## Usage
+```
+ ~/Downloads/lein run
+```
+Open e.g. http://localhost:3000/sample-ring?clojure=yes&lisp=maybe
 
-FIXME
-
-## License
-
-Copyright © 2017 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Experiment with src/sample_ring/core.clj, see commented out lines related to handler and simple-handler
