@@ -15,7 +15,7 @@ Prerequisites:
 * Maven 3 or newer - check `mvn -v`
 
 
-Setup EAP server
+Setup EAP server (using absolute-resources, workaround for https://issues.jboss.org/browse/WFCORE-2765)
 ```bash
 [[ -d properties ]] || mkdir properties
 
@@ -30,6 +30,20 @@ jboss-eap-7.1/bin/jboss-cli.sh -c --commands="
   module add --name=org.experiments.rsvoboda --absolute-resources=properties, 
   /subsystem=ee:list-add(name=global-modules,value={name=org.experiments.rsvoboda}),
   :shutdown(restart=true)"
+```
+
+Setup WildFly / EAP server with WFCORE-2765 changes (allows `properties` directory inside modules)
+```bash
+echo "module add --name=org.experiments.rsvoboda --resources=properties --allow-nonexistent-resources
+embed-server
+/subsystem=ee:list-add(name=global-modules,value={name=org.experiments.rsvoboda})" | dist/target/wildfly-11.0.0.Beta1-SNAPSHOT/bin/jboss-cli.sh
+
+cat <<EOF > dist/target/wildfly-11.0.0.Beta1-SNAPSHOT/modules/org/experiments/rsvoboda/main/properties/application.properties 
+hello.greeting=Hi
+hello.name=Rostislav
+EOF
+
+dist/target/wildfly-11.0.0.Beta1-SNAPSHOT/bin/standalone.sh &
 ```
 
 Deploy, run and undeploy the application (second terminal recommended)
