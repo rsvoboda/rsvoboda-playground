@@ -10,3 +10,5 @@ Rostislav's Playgroung
 [Jolokia](Jolokia) - JMX with JSON over HTTP
 
 [sample-ring](sample-ring) - A Clojure experiment with Leiningen and Ring library
+
+[Prometheus](Prometheus) - Monitoring experiments
