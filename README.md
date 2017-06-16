@@ -12,3 +12,5 @@ Rostislav's Playgroung
 [sample-ring](sample-ring) - A Clojure experiment with Leiningen and Ring library
 
 [Prometheus](Prometheus) - Monitoring experiments
+
+[simple-jaxrs](simple-jaxrs) - Simple JAX-RS container side filter
