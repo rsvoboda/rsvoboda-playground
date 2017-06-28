@@ -47,7 +47,7 @@ function pass(testName, testDuration) {
 }
 function fail(testName, testDuration, details) {
     var report = "<testsuite errors=\"0\" failures=\"1\" name=\"'jbossws.performance.compare'\" tests=\"1\" time=\"0\">\n"
-    report = report +  "<testcase classname=\"" + testName + "\" name=\"" + testName + "\" time=\"" + testDuration + "\"/>\n"
+    report = report +  "<testcase classname=\"" + testName + "\" name=\"" + testName + "\" time=\"" + testDuration + "\">\n"
     report = report + "<error message=\"Performance was too low: " + details + " \" type=\"diff\">\n"
     report = report + "<![CDATA[performance was too low: " + details + "]]>\n"
     report = report + "</error></testcase>\n"
