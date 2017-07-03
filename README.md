@@ -14,3 +14,5 @@ Rostislav's Playgroung
 [Prometheus](Prometheus) - Monitoring experiments
 
 [simple-jaxrs](simple-jaxrs) - Simple JAX-RS container side filter
+
+[Nashorn](Nashorn) - Nashorn experiment
