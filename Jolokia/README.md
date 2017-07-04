@@ -3,7 +3,7 @@ Jolokia and WildFly
 Jolokia (https://jolokia.org/) is remote JMX with JSON over HTTP, an alternative to JSR-160 connectors.
 
 To run Jolokia with JBoss EAP you need to download JVM-Agent version from https://jolokia.org/download.html
-After that you need to configure JAVA_OPTS to add -javaagent and few additional parameter related to JBoss Logging (global package, -Xbootclasspath and java.util.logging.manager property )
+After that you need to configure JAVA_OPTS to add -javaagent and parameters related to JBoss Logging (global package, -Xbootclasspath and java.util.logging.manager property )
 
 In the log of the server you should see something like `Jolokia: Agent started with URL http://127.0.0.1:8778/jolokia/`
 
@@ -13,7 +13,7 @@ Prerequisites:
 
 * JDK 8 or newer - check `java -version`
 * wget
-* jq (optional, just for json pretty print)
+* jq (optional, for json pretty print)
 
 
 ```bash
