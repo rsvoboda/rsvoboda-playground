@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Activate debugging with F12</h2>
+
+<p>Select "Console" in the debugger menu. Then click Run again.</p>
+
+<script>
+
+console.clear();
+
+console.log('%c Make console greate again!', 'font-size:20px; background:red;')
+
+persons = [ { name: 'Gregor Mendel', city: 'Brno' }, { name: 'Donald Trump', city: 'New York' }, { name: 'Franz Kafka', city: 'Prague' }]
+
+console.table(persons)
+
+
+persons.forEach(p => {
+    console.group(); 
+    console.log(`This is ${p.name}`);
+    console.log(`He comes from ${p.city}`);
+    console.groupEnd();
+});
+
+
+</script>
+
+</body>
+</html> 
+
