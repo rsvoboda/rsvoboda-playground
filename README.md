@@ -16,3 +16,5 @@ Rostislav's Playgroung
 [simple-jaxrs](simple-jaxrs) - Simple JAX-RS container side filter
 
 [Nashorn](Nashorn) - Nashorn experiment
+
+[ConsoleInBrowsers](ConsoleInBrowsers) - Experimens with Console in browsers
