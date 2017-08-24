@@ -18,3 +18,5 @@ Rostislav's Playgroung
 [Nashorn](Nashorn) - Nashorn experiment
 
 [ConsoleInBrowsers](ConsoleInBrowsers) - Experimens with Console in browsers
+
+[redux-demo](redux-demo) - Angular 4 + Redux experiment
