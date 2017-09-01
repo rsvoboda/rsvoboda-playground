@@ -9,6 +9,8 @@ Follow these links to get started:
  * https://access.redhat.com/solutions/1137023
  * http://rhelblog.redhat.com/2015/12/18/getting-started-using-performance-co-pilot-and-vector-for-browser-based-metric-visualizations/
  * http://vectoross.io/docs/building-vector-source
+ * https://access.redhat.com/articles/2372811
+     Side-by-side comparison of PCP tools with standard / legacy tools
 
  Notes:
  * Use `pcp --host=host_address` to check availability of pcp data
