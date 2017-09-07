@@ -22,3 +22,5 @@ Rostislav's Playgroung
 [redux-demo](redux-demo) - Angular 4 + Redux experiment
 
 [pcp-and-vector](pcp-and-vector) - Performance Co-Pilot and Vector performance monitoring framework
+
+[chrome-headless](chrome-headless) - Automated testing with Headless Chrome
