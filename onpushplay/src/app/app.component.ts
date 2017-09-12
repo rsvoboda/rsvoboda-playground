@@ -139,7 +139,7 @@ export class MoveStateEvent {
 export class ItemComponent implements OnDestroy, OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(`Changed ${this.item.name}`);
+    console.log(`%cChanged ${this.item.name}`, 'background:Pink');
     for (let propName in changes) {
       let change = changes[propName];
       let curVal  = JSON.stringify(change.currentValue);
@@ -151,11 +151,11 @@ export class ItemComponent implements OnDestroy, OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    console.log(`Init ${this.item.name}`);
+    console.log(`%cInit ${this.item.name}`, 'background:LightGreen');
   }
 
   ngOnDestroy(): void {
-    console.log(`Destroy ${this.item.name}`);
+    console.log(`%cDestroy ${this.item.name}`, 'background:DarkOrange');
   }
 
   @Input()
