@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, OnChanges, Output, SimpleChanges } from '@angular/core';
 import {List} from 'immutable';
 
 @Component({
@@ -18,7 +18,8 @@ import {List} from 'immutable';
       </table>
     </div>
     </body>
-    `
+    `,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   states: List<List<Item>> = List<List<Item>>();
@@ -79,7 +80,7 @@ export class AppComponent {
       </app-item>
     </ul>
   `,
-  styles: [``]
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StateComponent {
   @Input()
@@ -134,7 +135,7 @@ export class MoveStateEvent {
       </div>
     </li>
   `,
-  styles: [``]
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemComponent implements OnDestroy, OnInit, OnChanges {
 
