@@ -6,7 +6,12 @@ import {List} from 'immutable';
   template: `
     <body>
     <p>Test</p>
-    <div style="width: 500px; border: solid 1px black; overflow: scroll;">
+
+    <app-headers
+    [states]="states"
+    [leftOffset]="leftOffset"></app-headers>
+
+    <div style="width: 500px; border: solid 1px black; overflow: scroll;" (scroll)="onScrollX($event)">
       <table>
         <tr style="vertical-align: top">
           <td *ngFor="let state of states ; let i = index " style="width: 150px; min-width: 150px;">
@@ -23,6 +28,7 @@ import {List} from 'immutable';
 })
 export class AppComponent {
   states: List<List<Item>> = List<List<Item>>();
+  leftOffset = '0px';
 
   constructor() {
     this.states = this.states.withMutations(mutable => {
@@ -59,6 +65,12 @@ export class AppComponent {
       this.states = this.states.insert(event.to, state);
     }
 
+  }
+
+  onScrollX(event: Event) {
+    const boardLeftOffset: number = event.target['scrollLeft'] * -1;
+    this.leftOffset = boardLeftOffset + 'px';
+    console.log('Setting offset to ' + this.leftOffset);
   }
 }
 
@@ -196,5 +208,66 @@ export class Item {
 
   constructor(name: string) {
     this.name = name;
+  }
+}
+
+@Component({
+  selector: 'app-headers',
+  template: `
+    <div style="width: 500px; border: solid 1px black; overflow: hidden ; left: -300px">
+      <table [ngStyle]="{left: leftOffset}">
+        <tr>
+          <td style="padding-left: 200px" [attr.colspan]="states.size">{{lastChanged()}}</td>
+        </tr>
+        <tr style="vertical-align: top ; overflow: hidden ;  white-space: nowrap">
+          <app-header *ngFor="let state of states ; let i = index "
+                      [state]="i">
+          </app-header>
+        </tr>
+      </table>
+    </div>
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class HeadersComponent {
+  @Input()
+  states: List<Item> = List<Item>();
+  private _leftOffset: string;
+
+
+  @Input()
+  set leftOffset(value: string) {
+    console.log('Received offset to ' + this._leftOffset);
+    this._leftOffset = value;
+  }
+
+  get leftOffset(): string {
+    return this._leftOffset;
+  }
+
+  lastChanged() {
+    const date: Date = new Date();
+    return date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+  }
+}
+
+@Component({
+  selector: 'app-header',
+  template: `
+      <td style="width: 150px; min-width: 150px; text-align: center">
+        <div>S-{{state}}</div>
+        <div>{{lastChanged()}}</div>
+      </td>
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class HeaderComponent {
+  @Input()
+  state: number;
+
+
+  lastChanged() {
+    const date: Date = new Date();
+    return date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
   }
 }
