@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, OnChanges, Output, SimpleChanges } from '@angular/core';
-import {List} from 'immutable';
+import {List, Map} from 'immutable';
 
 @Component({
   selector: 'app-root',
@@ -22,12 +22,42 @@ import {List} from 'immutable';
         </tr>
       </table>
     </div>
+
+    <h3>map.entries()</h3>
+    <table style="width: 200px">
+      <tr *ngFor="let entry of map.entries() ; let i = index">
+        <td>{{i}}</td>
+        <td>{{entry}}</td>
+      </tr>
+    </table>
+    <h3>map.values()</h3>
+    <table style="width: 200px">
+      <tr *ngFor="let value of map.values() ; let i = index">
+        <td>{{i}}</td>
+        <td>{{value}}</td>
+      </tr>
+    </table>
+    <h3>map.keys()</h3>
+    <table style="width: 200px">
+      <tr *ngFor="let key of map.keys() ; let i = index">
+        <td>{{i}}</td>
+        <td>{{key}}</td>
+        <td>{{map.get(key)}}</td>
+      </tr>
+    </table>
+
+    <h3>List ... first item</h3>
+    <ul>
+      <li *ngFor="let state of states ; let i = index">{{state.get(0).name}}</li>
+    </ul>
+
     </body>
     `,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   states: List<List<Item>> = List<List<Item>>();
+  map: Map<string, string> = Map<string, string>();
   leftOffset = '0px';
 
   constructor() {
@@ -39,6 +69,12 @@ export class AppComponent {
       mutable.push(List<Item>([new Item('M'), new Item('N'), new Item('O')]));
       mutable.push(List<Item>([new Item('P'), new Item('Q'), new Item('R')]));
     });
+    this.map = this.map.withMutations(mutable => {
+        mutable.set('b', 'B');
+        mutable.set('a', 'A');
+        mutable.set('y', 'Y');
+        mutable.set('x', 'X');
+      });
   }
 
   onMoveItemEvent(event: MoveItemEvent) {
