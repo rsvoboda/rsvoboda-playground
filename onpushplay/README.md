@@ -33,3 +33,5 @@ yarn build
 ng serve
 yarn add immutable
 ```
+
+Experiments based on https://github.com/kabir/onpushplay/commits/master
