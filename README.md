@@ -24,3 +24,5 @@ Rostislav's Playgroung
 [pcp-and-vector](pcp-and-vector) - Performance Co-Pilot and Vector performance monitoring framework
 
 [chrome-headless](chrome-headless) - Automated testing with Headless Chrome
+
+[dredd](dredd) - Dredd: HTTP API Testing Framework
