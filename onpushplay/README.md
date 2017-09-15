@@ -1,4 +1,19 @@
 # Onpushplay
+## Actions backlog
+
+```
+ng new --directory onpushplay onpushplay
+cd onpushplay/
+yarn install
+yarn build
+ng serve
+yarn add immutable
+yarn add bootstrap
+```
+
+Experiments based on https://github.com/kabir/onpushplay/commits/master
+
+## Angular CLI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
@@ -22,16 +37,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
-
-## Actions backlog
-
-```
-ng new --directory onpushplay onpushplay
-cd onpushplay/
-yarn install
-yarn build
-ng serve
-yarn add immutable
-```
-
-Experiments based on https://github.com/kabir/onpushplay/commits/master
