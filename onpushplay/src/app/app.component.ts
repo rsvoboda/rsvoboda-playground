@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, OnChanges, Output, SimpleChanges } from '@angular/core';
+import {
+    ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, OnChanges, Output, SimpleChanges
+  } from '@angular/core';
 import {List, Map} from 'immutable';
 
 @Component({
@@ -186,17 +188,24 @@ export class MoveStateEvent {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemComponent implements OnDestroy, OnInit, OnChanges {
+  @Input()
+  stateIndex: number;
+  @Input()
+  item: Item;
+  @Output()
+  moveItemEvent: EventEmitter<MoveItemEvent> = new EventEmitter<MoveItemEvent>();
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(`%cChanged ${this.item.name}`, 'background:Pink');
-    for (let propName in changes) {
-      let change = changes[propName];
-      let curVal  = JSON.stringify(change.currentValue);
-      let prevVal = JSON.stringify(change.previousValue);
+    // ng lint: for (... in ...) statements must be filtered with an if statement
+    for (const propName of Object.keys(changes)) {
+      const change = changes[propName];
+      const curVal  = JSON.stringify(change.currentValue);
+      const prevVal = JSON.stringify(change.previousValue);
 
       console.log(`   ${propName}: Moving from ${prevVal} to ${curVal}`);
     }
-    //console.table(changes)
+    // console.table(changes)
   }
 
   ngOnInit(): void {
@@ -206,13 +215,6 @@ export class ItemComponent implements OnDestroy, OnInit, OnChanges {
   ngOnDestroy(): void {
     console.log(`%cDestroy ${this.item.name}`, 'background:DarkOrange');
   }
-
-  @Input()
-  stateIndex: number;
-  @Input()
-  item: Item;
-  @Output()
-  moveItemEvent: EventEmitter<MoveItemEvent> = new EventEmitter<MoveItemEvent>();
 
   constructor() {
   }
