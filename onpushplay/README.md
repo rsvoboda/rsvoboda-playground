@@ -11,6 +11,22 @@ yarn add immutable
 yarn add bootstrap
 ```
 
+gh-pages fun
+```
+yarn build --prod --base-href "https://rsvoboda.github.io/rsvoboda-playground/"
+mv dist ~/Downloads/
+cd ..
+
+git checkout --orphan gh-pages
+git rm -rf .
+mv ~/Downloads/dist/* .
+rm -rf ~/Downloads/dist
+
+git add -A
+git commit -m "gh-pages onpushplay" && git push origin gh-pages
+git checkout master
+```
+
 Experiments based on https://github.com/kabir/onpushplay/commits/master
 
 ## Angular CLI
