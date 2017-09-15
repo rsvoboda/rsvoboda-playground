@@ -27,6 +27,11 @@ git commit -m "gh-pages onpushplay" && git push origin gh-pages
 git checkout master
 ```
 
+Move to webpack
+```
+ng eject
+```
+
 Experiments based on https://github.com/kabir/onpushplay/commits/master
 
 ## Angular CLI
