@@ -26,3 +26,5 @@ Rostislav's Playgroung
 [chrome-headless](chrome-headless) - Automated testing with Headless Chrome
 
 [dredd](dredd) - Dredd: HTTP API Testing Framework
+
+[git-tip](git-tip) - Commonly used git tips and tricks
