@@ -28,3 +28,5 @@ Rostislav's Playgroung
 [dredd](dredd) - Dredd: HTTP API Testing Framework
 
 [git-tip](git-tip) - Commonly used git tips and tricks
+
+[spock-example](spock-example) - Spock Framework example
