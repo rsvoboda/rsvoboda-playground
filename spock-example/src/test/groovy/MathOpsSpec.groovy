@@ -1,6 +1,6 @@
 import spock.lang.Specification;
 
-class MathSpec extends Specification {
+class MathOpsSpec extends Specification {
 
   def "maximum of two numbers"(int a, int b, int c) {
     expect:
