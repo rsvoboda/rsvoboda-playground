@@ -1,0 +1,13 @@
+---
+- name: Configure CI server
+  hosts: ci-server
+  sudo: True
+  tasks:
+    - name: install git only if it is not already installed
+      yum:
+        name=git
+        state=present
+    - name: install mc only if it is not already installed
+      yum:
+        name=mc
+        state=present

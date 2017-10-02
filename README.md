@@ -30,3 +30,5 @@ Rostislav's Playgroung
 [git-tip](git-tip) - Commonly used git tips and tricks
 
 [spock-example](spock-example) - Spock Framework example
+
+[ansible](ansible) - Ansible and Vagrant
