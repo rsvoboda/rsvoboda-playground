@@ -24,5 +24,8 @@ ls -l .vagrant/machines/default/libvirt/
 ansible-playbook configure-ci-server.yml -i hosts
 
 vagrant ssh
-``` 
- 
+```
+
+Resources
+-------------------
+ * http://codeheaven.io/an-introduction-to-ansible/
