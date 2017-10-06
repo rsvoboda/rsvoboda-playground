@@ -11,6 +11,12 @@ vagrant up
 ansible-playbook configure-ci-server.yml -i hosts
 ``` 
 
+Cleanup
+-------------------
+```bash
+vagrant destroy
+```
+
 Backlog of commands
 -------------------
 ```bash
@@ -24,6 +30,8 @@ ls -l .vagrant/machines/default/libvirt/
 ansible-playbook configure-ci-server.yml -i hosts
 
 vagrant ssh
+
+vagrant destroy
 ```
 
 Resources
