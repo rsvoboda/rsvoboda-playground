@@ -34,3 +34,4 @@ Rostislav's Playgroung
 [ansible](ansible) - Ansible and Vagrant
 
 [ee8-sample-sse](ee8-sample-sse) - JAX-RS 2.1 Server Sent Events example
+[IPv6](IPv6) - IPv6 address checks
