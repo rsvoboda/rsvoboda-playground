@@ -38,3 +38,5 @@ Rostislav's Playgroung
 [IPv6](IPv6) - IPv6 address checks
 
 [memory-investigation](memory-investigation) - Memory investigation for management operations in WildFly
+
+[https-certificate-java](https-certificate-java) - HTTPS / Java / trust the certificate
