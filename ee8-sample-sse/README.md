@@ -27,3 +27,8 @@ cd Resteasy
 mvn clean package -DskipTests -Denforcer.skip=true -Dcheckstyle.skip=true
 ls testsuite/integration-tests/target/test-server/wildfly-10.1.0.Final
 ```
+
+WildFly & RESTEasy - Accept header
+-------------------
+ * Discussed in http://lists.jboss.org/pipermail/resteasy-dev/2017-October/000478.html
+ * Issue tracked in https://issues.jboss.org/browse/RESTEASY-1733
