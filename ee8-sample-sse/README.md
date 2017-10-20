@@ -10,8 +10,7 @@ Running
 mvn clean package
 cp target/ee8-sample-sse.war ${PATH_TO_SERVER}
 
-curl -i http://localhost:8080/ee8-sample-sse/resources/beats  ## when running against GlassFish 5
-curl -i -H "Accept: text/event-stream" http://localhost:8080/ee8-sample-sse/resources/beats ## when running against WildFly 10.1 + RESTEasy master, Accept header is needed
+curl -i http://localhost:8080/ee8-sample-sse/resources/beats  
 ```
 
 Another use-case is to run the project directly in IDE - e.g. NetBeans IDE
@@ -30,5 +29,10 @@ ls testsuite/integration-tests/target/test-server/wildfly-10.1.0.Final
 
 WildFly & RESTEasy - Accept header
 -------------------
+When running against WildFly 10.1 + RESTEasy master, Accept header was needed for some time
+```bash
+curl -i -H "Accept: text/event-stream" http://localhost:8080/ee8-sample-sse/resources/beats
+```
+
  * Discussed in http://lists.jboss.org/pipermail/resteasy-dev/2017-October/000478.html
  * Issue tracked in https://issues.jboss.org/browse/RESTEASY-1733
