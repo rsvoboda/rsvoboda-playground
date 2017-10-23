@@ -36,3 +36,12 @@ curl -i -H "Accept: text/event-stream" http://localhost:8080/ee8-sample-sse/reso
 
  * Discussed in http://lists.jboss.org/pipermail/resteasy-dev/2017-October/000478.html
  * Issue tracked in https://issues.jboss.org/browse/RESTEASY-1733
+
+ WildFly & RESTEasy - Filters issue
+-------------------
+```bash
+curl -vvv http://localhost:8080/ee8-sample-sse/resources/foo
+## vs.
+curl -vvv -i http://localhost:8080/ee8-sample-sse/resources/beats
+```
+Response for beats endpoint is without CORS filter headers.
