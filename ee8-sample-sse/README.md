@@ -45,3 +45,5 @@ curl -vvv http://localhost:8080/ee8-sample-sse/resources/foo
 curl -vvv -i http://localhost:8080/ee8-sample-sse/resources/beats
 ```
 Response for beats endpoint is without CORS filter headers.
+
+* Issue tracked in https://issues.jboss.org/browse/RESTEASY-1742
