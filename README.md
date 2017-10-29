@@ -40,3 +40,5 @@ Rostislav's Playgroung
 [memory-investigation](memory-investigation) - Memory investigation for management operations in WildFly
 
 [https-certificate-java](https-certificate-java) - HTTPS / Java / trust the certificate
+
+[gh-md-toc](gh-md-toc) - Table Of Contents (TOC) tool for GitHub README.md
