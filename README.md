@@ -42,3 +42,5 @@ Rostislav's Playgroung
 [https-certificate-java](https-certificate-java) - HTTPS / Java / trust the certificate
 
 [gh-md-toc](gh-md-toc) - Table Of Contents (TOC) tool for GitHub README.md
+
+[local-remote-download](local-remote-download) - How to download local or remote bits the same way
