@@ -1,5 +1,5 @@
 # Documentation - checks for links / images / anchors
-I was looking at https://github.com/keycloak/keycloak-documentation#building-keycloak-documentation and noticed nice feature they have implemented.
+I was looking at https://github.com/keycloak/keycloak-documentation and noticed nice feature they have implemented.
 
 When the documentation is generated there are checka for its validity - includes, links, images, anchors
  * https://github.com/keycloak/keycloak-documentation/tree/master/tests/src/test/java/org/keycloak/documentation/test
@@ -11,7 +11,14 @@ I believe similar checks should be implemented any documentation.
 Goal of the experiment is to check https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/7.0.0_release_notes/ content
 
 Steps you need to do:
-1) Add mapping
+1) Get keycloak-documentation
+
+```bash
+git clone https://github.com/keycloak/keycloak-documentation.git
+cd keycloak-documentation
+```
+
+2) Add mapping
 ```patch
 $ git diff
 diff --git a/tests/src/test/resources/guide-url-fragments-community b/tests/src/test/resources/guide-url-fragments-community
@@ -29,9 +36,9 @@ index a5c8418..8688840 100644
 
 ```
 
-2) Add test
+3) Add test
 ```java
-cat src/test/java/org/keycloak/documentation/test/RN700Test.java
+cat tests/src/test/java/org/keycloak/documentation/test/RN700Test.java
 package org.keycloak.documentation.test;
 
 public class RN700Test extends AbstractDocsTest {
@@ -45,8 +52,9 @@ public class RN700Test extends AbstractDocsTest {
 
 ```
 
-3) Run test which specifies `guideBaseUrl`
+4) Run test which specifies `guideBaseUrl`
 
 ```bash
+cd tests
 mvn test -Dtest=RN700Test -DguideBaseUrl=https://access.redhat.com/docuentation/en-us/red_hat_jboss_enterprise_application_platform/7.0/html-single/
 ```
