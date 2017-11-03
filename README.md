@@ -44,3 +44,5 @@ Rostislav's Playgroung
 [gh-md-toc](gh-md-toc) - Table Of Contents (TOC) tool for GitHub README.md
 
 [local-remote-download](local-remote-download) - How to download local or remote bits the same way
+
+[documentation-check](documentation-check) - Documentation - checks for links / images / anchors
