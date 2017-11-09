@@ -21,3 +21,7 @@ yarn.lock
 
 .vagrant
 nb-configuration.xml
+
+.classpath
+.project
+.settings/
