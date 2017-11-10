@@ -25,3 +25,8 @@ nb-configuration.xml
 .classpath
 .project
 .settings/
+
+data
+wlp
+openliberty-*.zip
+prometheus-2*
