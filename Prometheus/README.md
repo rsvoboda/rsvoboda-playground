@@ -18,7 +18,7 @@ Look at [pom.xml](pom.xml) in this directory, `org.wildfly.swarm:microprofile-me
 mvn clean package
 java -jar target/demo-swarm.jar
 ```
-Unfortunately boot is not succesfull due to WFSWARM0008: Artifact 'org.wildfly.swarm:mp_metrics_cdi_extension:jar:2017.11.0' not found.
+Unfortunately boot is not succesfull due to WFSWARM0008: Artifact org.wildfly.swarm:mp_metrics_cdi_extension:jar:2017.11.0 not found.
 
 ```
 2017-11-09 15:54:27,460 ERROR [stderr] (main) org.wildfly.swarm.container.DeploymentException: java.lang.RuntimeException: WFSWARM0008: Artifact 'org.wildfly.swarm:mp_metrics_cdi_extension:jar:2017.11.0' not found.
@@ -54,3 +54,73 @@ unzip -l target/demo-swarm.jar | grep cdi_extension
 ```
 
 TODO: Try with 2017.12.0 once released
+
+### OpenLiberty
+Get and configure OpenLiberty
+```bash
+wget https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/release/2017-09-27_1951/openliberty-17.0.0.3.zip
+unzip -q openliberty-17.0.0.3.zip
+wlp/bin/server create  mp --template=microProfile1
+gedit wlp/usr/servers/mp/server.xml
+```
+
+Changes in wlp/usr/servers/mp/server.xml:
+```xml
+<server description="new server">
+    ==>
+<server description="new server">
+    <quickStartSecurity userName="theUser" userPassword="thePassword"/>
+    <keyStore id="defaultKeyStore" password="Liberty"/>
+```
+
+Run OpenLiberty
+```bash
+wlp/bin/server run mp &
+```
+
+### Prometheus
+Get and configure Prometheus
+```bash
+wget https://github.com/prometheus/prometheus/releases/download/v2.0.0/prometheus-2.0.0.linux-amd64.tar.gz
+tar xzf prometheus-2.0.0.linux-amd64.tar.gz
+gedit prom.yml
+```
+
+Content of prom.yml
+```yaml
+scrape_configs:
+  # Configuration to poll from WildFly Swarm
+##  - job_name: 'swarm'
+##    scrape_interval: 15s
+    # translates to http://localhost:8080/metrics
+##    static_configs:
+##      - targets: ['localhost:8080']
+  # Configuration to poll from OpenLiberty
+  - job_name: 'liberty'
+    scrape_interval: 15s
+    scheme: https
+    basic_auth:
+      username: 'theUser'
+      password: 'thePassword'
+    tls_config:
+      insecure_skip_verify: true
+    # translates to https://localhost:9443/metrics
+    static_configs:
+      - targets: ['localhost:9443']
+```
+
+Run Prometheus
+```bash
+prometheus-2.0.0.linux-amd64/prometheus --config.file=prom.yml
+```
+
+Open http://localhost:9090 to access to Prometheus UI
+
+Sample graph for `base:memory_used_heap_bytes` and `base:thread_count`: http://localhost:9090/graph?g0.range_input=1h&g0.expr=base%3Amemory_used_heap_bytes&g0.tab=0&g1.range_input=1h&g1.expr=base%3Athread_count&g1.tab=0
+
+
+### End of experiment
+```bash
+Ctrl + C ## to stop running Prometheus
+wlp/bin/server stop mp
+```
