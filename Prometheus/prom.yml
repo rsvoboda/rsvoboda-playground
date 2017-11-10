@@ -1,0 +1,19 @@
+scrape_configs:
+  # Configuration to poll from WildFly Swarm
+##  - job_name: 'swarm'
+##    scrape_interval: 15s
+    # translates to http://localhost:8080/metrics
+##    static_configs:
+##      - targets: ['localhost:8080']
+  # Configuration to poll from OpenLiberty
+  - job_name: 'liberty'
+    scrape_interval: 15s
+    scheme: https
+    basic_auth:
+      username: 'theUser'
+      password: 'thePassword'
+    tls_config:
+      insecure_skip_verify: true
+    # translates to https://localhost:9443/metrics
+    static_configs:
+      - targets: ['localhost:9443']
