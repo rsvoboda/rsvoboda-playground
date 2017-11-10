@@ -78,6 +78,12 @@ Run OpenLiberty
 wlp/bin/server run mp &
 ```
 
+MicroProfile related URLs:
+ * http://localhost:9080/metrics/
+ * http://localhost:9080/health/
+ * http://localhost:9080/jwt/
+ * http://localhost:9080/ibm/api/
+
 ### Prometheus
 Get and configure Prometheus
 ```bash
