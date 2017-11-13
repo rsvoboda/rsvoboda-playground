@@ -46,3 +46,5 @@ Rostislav's Playgroung
 [local-remote-download](local-remote-download) - How to download local or remote bits the same way
 
 [documentation-check](documentation-check) - Documentation - checks for links / images / anchors
+
+[jaxrs-2.0-vs-2.1](jaxrs-2.0-vs-2.1) - JAX-RS 2.0 versus 2.1 - diff of specification
