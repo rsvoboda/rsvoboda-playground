@@ -1,4 +1,4 @@
-#JAX-RS 2.0 versus 2.1 - diff of specification
+# JAX-RS 2.0 versus 2.1 - diff of specification
 ```bash
 pdftotext jaxrs-2_1-final-spec.pdf > jaxrs-2_1-final-spec.txt
 pdftotext jsr339-jaxrs-2.0-final-spec.pdf > jsr339-jaxrs-2.0-final-spec.txt
