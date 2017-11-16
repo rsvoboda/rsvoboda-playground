@@ -48,3 +48,7 @@ Rostislav's Playgroung
 [documentation-check](documentation-check) - Documentation - checks for links / images / anchors
 
 [jaxrs-2.0-vs-2.1](jaxrs-2.0-vs-2.1) - JAX-RS 2.0 versus 2.1 - diff of specification
+
+[jmh-jenkins](jmh-jenkins) - JMH Benchmark results on Jenkins
+
+[load-testing-notes](load-testing-notes) - Notes for load testing
