@@ -52,3 +52,5 @@ Rostislav's Playgroung
 [jmh-jenkins](jmh-jenkins) - JMH Benchmark results on Jenkins
 
 [load-testing-notes](load-testing-notes) - Notes for load testing
+
+[asciidoctor-maven-example](asciidoctor-maven-example) - Asciidoctor Maven Example

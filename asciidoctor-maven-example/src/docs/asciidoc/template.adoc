@@ -1,0 +1,31 @@
+= RFE foo bar
+
+== Introduction
+
+This document tracks the necessary information required to test foo bar.
+
+
+== Testing
+
+=== Smoke testing
+
+=== Functional testing
+
+=== Integration testing
+
+=== Platform certification testing
+
+=== Security testing
+
+=== Recovery/Failover testing
+
+=== Performance testing
+
+=== Backward compatibility testing
+
+== Contacts
+ * dev
+ * qe
+
+== Reference
+ * foo bar community documents
