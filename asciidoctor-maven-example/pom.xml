@@ -48,4 +48,25 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>colony</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctor-maven-plugin</artifactId>
+                        <configuration>
+                            <attributes>
+                                <stylesheet>colony.css</stylesheet>
+                                   <!--  http://themes.asciidoctor.org/stylesheets/colony.css -->
+                                <stylesdir>${project.basedir}/stylesheets/</stylesdir>
+                            </attributes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
