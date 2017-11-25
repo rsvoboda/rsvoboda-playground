@@ -4,16 +4,18 @@ pipeline {
         timeout(time: 1, unit: 'HOURS') 
     }
     stages {
-        stage('Checkout') {
+        stage('Repo checkout') {
             steps {
                 checkout scm
             }
         }
         stage('Maven info') {
             steps {
-                sh 'which mvn'
-                sh 'which java'
-                sh 'mvn --version'
+                sh '''
+                    which mvn
+                    which java
+                    mvn --version
+                '''
             }
         }
         stage('Build') {
@@ -26,7 +28,7 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: '**/generated-docs/**/*', fingerprint: true 
+            archiveArtifacts artifacts: '**/generated-docs/**/*.html,**/generated-docs/**/*.svg,**/generated-docs/**/*.png', fingerprint: true
         }
     }
 }
