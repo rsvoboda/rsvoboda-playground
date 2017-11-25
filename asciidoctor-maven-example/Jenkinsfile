@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    options {
+        timeout(time: 1, unit: 'HOURS') 
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Maven info') {
+            steps {
+                sh 'which mvn'
+                sh 'which java'
+                sh 'mvn --version'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn -B clean package'
+            }
+        }
+    }
+}
