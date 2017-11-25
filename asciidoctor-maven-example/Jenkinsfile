@@ -18,7 +18,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn -B clean package'
+                dir 'asciidoctor-maven-example' {
+                    sh 'mvn -B clean package'
+                }
             }
         }
     }
