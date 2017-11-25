@@ -54,3 +54,5 @@ Rostislav's Playgroung
 [load-testing-notes](load-testing-notes) - Notes for load testing
 
 [asciidoctor-maven-example](asciidoctor-maven-example) - Asciidoctor Maven Example
+
+[openjdk-compilation](openjdk-compilation) - OpenJDK 8 compilation
