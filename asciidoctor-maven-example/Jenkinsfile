@@ -24,4 +24,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            archiveArtifacts artifacts: '**/generated-docs/**/*', fingerprint: true 
+        }
+    }
 }
