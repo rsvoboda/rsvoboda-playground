@@ -56,3 +56,5 @@ Rostislav's Playgroung
 [asciidoctor-maven-example](asciidoctor-maven-example) - Asciidoctor Maven Example
 
 [openjdk-compilation](openjdk-compilation) - OpenJDK 8 compilation
+
+[jenkins-job-builder](jenkins-job-builder) - Jenkins Job Builder experiment
