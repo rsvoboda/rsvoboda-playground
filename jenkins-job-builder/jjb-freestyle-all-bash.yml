@@ -1,0 +1,18 @@
+- job:
+    name: jjb-freestyle-all-bash
+    project-type: freestyle
+    concurrent: true
+
+    scm:
+      - git:
+            branches:
+              - '*/master'
+            url: 'https://github.com/rsvoboda/rsvoboda-playground.git'
+
+    builders:
+        - shell: |
+            cd asciidoctor-maven-example
+            mvn -B clean package
+    
+    wrappers:
+      - timestamps

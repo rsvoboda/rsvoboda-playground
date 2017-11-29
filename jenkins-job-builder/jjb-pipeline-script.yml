@@ -1,0 +1,20 @@
+- job:
+    name: jjb-pipeline-script
+    project-type: pipeline
+    dsl: |
+      pipeline {
+          agent any
+          stages {
+              stage('System info') {
+                  steps {
+                      sh 'uname -a'
+                  }
+              }
+              stage('Build') {
+                  steps {
+                      sh 'echo "TBD"'
+                  }
+              }
+          }
+      }
+    sandbox: true # Use groovy sandbox, false by default.

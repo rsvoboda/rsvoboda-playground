@@ -2,6 +2,8 @@
 
 Jenkins Job Builder is hosted under openstack.org site, see https://docs.openstack.org/infra/jenkins-job-builder/
 
+Source code is available on GitHub, https://github.com/openstack-infra/releases
+
 ## Installation
 
 ```bash
@@ -38,3 +40,7 @@ jenkins-jobs --help
 jenkins-jobs --conf jenkins_jobs.ini update foo.yml
 ```
 ## Examples
+ * jjb-freestyle-all-bash.yml
+ * jjb-pipeline-2-jobs.yml
+ * jjb-pipeline-scm.yml
+ * jjb-pipeline-script.yml

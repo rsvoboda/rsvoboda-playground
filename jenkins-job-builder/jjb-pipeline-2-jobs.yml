@@ -1,0 +1,36 @@
+- job:
+    name: jjb-pipeline-scm-bundle    
+    description: |
+      Managed by FooBar. Do whatever you want!
+    project-type: pipeline
+    concurrent: true
+    
+    pipeline-scm:
+      scm:
+        - git:
+              url: 'https://github.com/rsvoboda/rsvoboda-playground.git'
+              branches:
+                - '*/master'
+              clean: true
+      script-path: asciidoctor-maven-example/Jenkinsfile
+
+- job:
+    name: jjb-pipeline-script-bundle
+    project-type: pipeline
+    dsl: |
+      pipeline {
+          agent any
+          stages {
+              stage('System info') {
+                  steps {
+                      sh 'uname -a'
+                  }
+              }
+              stage('Build') {
+                  steps {
+                      sh 'echo "TBD"'
+                  }
+              }
+          }
+      }
+    sandbox: true # Use groovy sandbox, false by default.
