@@ -58,3 +58,5 @@ Rostislav's Playgroung
 [openjdk-compilation](openjdk-compilation) - OpenJDK 8 compilation
 
 [jenkins-job-builder](jenkins-job-builder) - Jenkins Job Builder experiment
+
+[jax-rs-timeouts](jax-rs-timeouts) - JAX-RS 2.1 - Connect and Read Timeouts
