@@ -60,3 +60,5 @@ Rostislav's Playgroung
 [jenkins-job-builder](jenkins-job-builder) - Jenkins Job Builder experiment
 
 [jax-rs-timeouts](jax-rs-timeouts) - JAX-RS 2.1 - Connect and Read Timeouts
+
+[jax-rs-2.0-cxf-metrics](jax-rs-2.0-cxf-metrics) - Dropwizard Metrics with Apache CXF, Spring Boot, Prometheus and Grafana
