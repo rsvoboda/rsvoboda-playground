@@ -30,3 +30,6 @@ data
 wlp
 openliberty-*.zip
 prometheus-2*
+
+.vscode/
+audit.log
