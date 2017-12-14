@@ -1,10 +1,10 @@
 scrape_configs:
   # Configuration to poll from WildFly Swarm
-##  - job_name: 'swarm'
-##    scrape_interval: 15s
+  - job_name: 'swarm'
+    scrape_interval: 15s
     # translates to http://localhost:8080/metrics
-##    static_configs:
-##      - targets: ['localhost:8080']
+    static_configs:
+      - targets: ['localhost:8080']
   # Configuration to poll from OpenLiberty
   - job_name: 'liberty'
     scrape_interval: 15s
