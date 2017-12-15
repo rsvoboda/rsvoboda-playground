@@ -26,3 +26,30 @@ Selective cleanup
 jenkins-jobs --conf jenkins_jobs.ini delete test_job_v2
 jenkins-jobs --conf jenkins_jobs.ini delete -j test_job test_job_v2 test_job_v3 test-comp-a test-comp-b
 ```
+
+## Views
+I tried https://github.com/piyush0101/jenkins-view-builder
+
+It works fine with security disabled and CSRF Protection disabled.
+With security or CSRF Protection enabled it has troubles to work properly, tested on Jenkins 2.95.
+
+Config used with jenkins-view-builder:
+```yaml
+- view:
+    type: list
+    name: test_jobs
+    description: Sample Test jobs
+    jobs:
+      - test_job
+      - test_job_v2
+      - test_job_v3
+    columns:
+        - status
+        - weather
+        - job
+        - last_success
+        - last_failure
+        - last_duration
+        - build_button
+    recurse: False
+```
