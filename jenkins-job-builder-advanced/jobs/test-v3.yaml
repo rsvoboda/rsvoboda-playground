@@ -1,0 +1,6 @@
+- job:
+    name: test_job_v3
+    defaults: acceptance-defaults
+    project-type: freestyle
+    builders:
+      - shell: 'ls'

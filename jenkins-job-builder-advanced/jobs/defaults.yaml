@@ -2,8 +2,9 @@
     name: global
     description: |
       <h3> Global </h3>
-    logrotate:
-        artifactDaysToKeep: 5
+    properties:
+        - build-discarder:
+            num-to-keep: 5
     wrappers:
         - timestamps
 
@@ -12,9 +13,10 @@
     description: |
       <h3> FooBar </h3>
     concurrent: false
-    logrotate:
-        daysToKeep: 20
-        artifactDaysToKeep: 10
+    properties:
+        - build-discarder:
+            days-to-keep: 20
+            num-to-keep: 10
     wrappers:
         - timestamps
         - workspace-cleanup
@@ -31,8 +33,9 @@
     description: |
       <h3> FooBar </h3>
     concurrent: false
-    logrotate:
-        artifactDaysToKeep: 30
+    properties:
+        - build-discarder:
+            num-to-keep: 10
     wrappers:
         - timestamps
         - workspace-cleanup

@@ -24,4 +24,5 @@ jenkins-jobs --conf jenkins_jobs.ini update --delete-old  jobs/
 Selective cleanup
 ```bash
 jenkins-jobs --conf jenkins_jobs.ini delete test_job_v2
+jenkins-jobs --conf jenkins_jobs.ini delete -j test_job test_job_v2 test_job_v3 test-comp-a test-comp-b
 ```
