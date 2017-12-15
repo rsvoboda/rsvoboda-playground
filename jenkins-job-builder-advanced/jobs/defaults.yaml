@@ -69,7 +69,7 @@
         - junit:
             results: '**/TEST-*.xml'
             keep-long-stdio: True
-            test-stability: True
+##            test-stability: True
 
 - trigger:
     name: periodic-trigger
