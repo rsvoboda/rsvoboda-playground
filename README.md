@@ -62,3 +62,5 @@ Rostislav's Playgroung
 [jax-rs-timeouts](jax-rs-timeouts) - JAX-RS 2.1 - Connect and Read Timeouts
 
 [jax-rs-2.0-cxf-metrics](jax-rs-2.0-cxf-metrics) - Dropwizard Metrics with Apache CXF, Spring Boot, Prometheus and Grafana
+
+[mattermost](mattermost) Mattermost - Open source, private cloud Slack-alternative
