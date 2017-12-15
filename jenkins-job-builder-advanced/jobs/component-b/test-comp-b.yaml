@@ -1,0 +1,6 @@
+- job:
+    name: test-comp-b
+    defaults: component-defaults
+    project-type: freestyle
+    builders:
+      - shell: 'ls'

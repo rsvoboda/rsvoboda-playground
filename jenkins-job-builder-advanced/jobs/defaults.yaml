@@ -1,0 +1,74 @@
+- defaults:
+    name: global
+    description: |
+      <h3> Global </h3>
+    logrotate:
+        artifactDaysToKeep: 5
+    wrappers:
+        - timestamps
+
+- defaults:
+    name: component-defaults
+    description: |
+      <h3> FooBar </h3>
+    concurrent: false
+    logrotate:
+        daysToKeep: 20
+        artifactDaysToKeep: 10
+    wrappers:
+        - timestamps
+        - workspace-cleanup
+        - timeout:
+            type: elastic
+            elastic-percentage: 300
+            elastic-default-timeout: 360
+            timeout: 360
+    publishers:
+        - default-publishers
+
+- defaults:
+    name: acceptance-defaults
+    description: |
+      <h3> FooBar </h3>
+    concurrent: false
+    logrotate:
+        artifactDaysToKeep: 30
+    wrappers:
+        - timestamps
+        - workspace-cleanup
+        - timeout:
+            type: absolute
+            timeout: 60
+    publishers:
+        - default-publishers
+
+- scm:
+    name: repo-wf
+    scm:
+        - git:
+            url: https://github.com/wildfly/wildfly.git
+            branches:
+                - master
+
+- scm:
+    name: repo-wf-core
+    scm:
+        - git:
+            url: https://github.com/wildfly/wildfly-core.git
+            branches:
+                - master
+
+- publisher:
+    name: default-publishers
+    publishers:
+        - archive:
+            artifacts: 'target/surefire-reports/TEST-*.xml,target/surefire-reports/*output.txt'
+        - junit:
+            results: '**/TEST-*.xml'
+            keep-long-stdio: True
+            test-stability: True
+
+- trigger:
+    name: periodic-trigger
+    triggers:
+        - timed: 'H H * * *'
