@@ -64,3 +64,5 @@ Rostislav's Playgroung
 [jax-rs-2.0-cxf-metrics](jax-rs-2.0-cxf-metrics) - Dropwizard Metrics with Apache CXF, Spring Boot, Prometheus and Grafana
 
 [mattermost](mattermost) Mattermost - Open source, private cloud Slack-alternative
+
+[jenkins-job-wrecker](jenkins-job-wrecker) - Jenkins Job Wrecker - Translate Jenkins XML jobs to Jenkins Job Builder YAML
