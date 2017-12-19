@@ -66,3 +66,5 @@ Rostislav's Playgroung
 [mattermost](mattermost) Mattermost - Open source, private cloud Slack-alternative
 
 [jenkins-job-wrecker](jenkins-job-wrecker) - Jenkins Job Wrecker - Translate Jenkins XML jobs to Jenkins Job Builder YAML
+
+[jenkins-api](jenkins-api) - Jenkins HTTP API experiment
