@@ -72,3 +72,11 @@ curl --user $USER:$APITOKEN -H "$CRUMB" -X POST "$SERVER/createItem?name=rs-fold
 curl --user $USER:$APITOKEN -H "$CRUMB" $SERVER/job/test_job/config.xml > sample-job.xml
 curl --user $USER:$APITOKEN -H "$CRUMB" -X POST --data-binary @sample-job.xml -H "Content-Type:text/xml" $SERVER/job/rs-folder-experiment/createItem?name=test_job_in_folder
 ```
+
+## Jenkins Job Builder and folders
+
+JJB master has some activity related to folders, not yet available in tagged version of JJB.
+
+Basic folder support + Cloudbees folder creation support
+ * http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/commit/?id=af9d984baa7f93ba8e846ff30a681d04117397e7
+ * http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/commit/?id=8bcd0d0bd2caf9d28d4f55cba712afb20654b591
