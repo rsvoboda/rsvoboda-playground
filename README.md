@@ -68,3 +68,5 @@ Rostislav's Playgroung
 [jenkins-job-wrecker](jenkins-job-wrecker) - Jenkins Job Wrecker - Translate Jenkins XML jobs to Jenkins Job Builder YAML
 
 [jenkins-api](jenkins-api) - Jenkins HTTP API experiment
+
+[asciidoc-metadata](asciidoc-metadata) - AsciiDoc and meta-data
