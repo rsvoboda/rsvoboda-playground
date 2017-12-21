@@ -1,4 +1,4 @@
-- defaults:
+- defaults: &DEFAULT
     name: global
     description: |
       <h3> Global </h3>
@@ -7,6 +7,12 @@
             num-to-keep: 5
     wrappers:
         - timestamps
+
+- defaults:
+    name: comp-c-defaults
+    <<: *DEFAULT
+    description: |
+      <h3> Component C specific Global </h3>
 
 - defaults:
     name: component-defaults

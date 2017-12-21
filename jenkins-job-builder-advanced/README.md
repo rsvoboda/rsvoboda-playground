@@ -74,3 +74,8 @@ See `views.yaml` for list view example. Latest JJB buil d from master is needed.
 Reasonable default columns for list views are available now http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/commit/?id=83592a094bfd8889e50d29019f5f7f12e225deb3
 
 GitHub search for view examples: https://github.com/search?p=1&q=view-type%3A+list&type=Code&utf8=%E2%9C%93
+
+## Aliases and `<<:` in YAML
+Merge Key Language-Independent Type for YAML version 1.1 is defined in http://yaml.org/type/merge.html
+
+For example usage of `<<:` see `defaults.yaml` and definition of `comp-c-defaults`.

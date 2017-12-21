@@ -1,0 +1,6 @@
+- job:
+    name: test-comp-c
+    defaults: comp-c-defaults
+    project-type: freestyle
+    builders:
+      - shell: 'ls'
