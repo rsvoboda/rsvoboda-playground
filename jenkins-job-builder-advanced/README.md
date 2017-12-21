@@ -27,35 +27,6 @@ jenkins-jobs --conf jenkins_jobs.ini delete test_job_v2
 jenkins-jobs --conf jenkins_jobs.ini delete -j test_job test_job_v2 test_job_v3 test-comp-a test-comp-b
 ```
 
-## Views via JVB
-I tried https://github.com/piyush0101/jenkins-view-builder
-
-It works fine with security disabled and CSRF Protection disabled.
-With security or CSRF Protection enabled it has troubles to work properly, tested on Jenkins 2.95.
-
-Config used with jenkins-view-builder:
-```yaml
-- view:
-    type: list
-    name: test_jobs
-    description: Sample Test jobs
-    jobs:
-      - test_job
-      - test_job_v2
-      - test_job_v3
-    columns:
-        - status
-        - weather
-        - job
-        - last_success
-        - last_failure
-        - last_duration
-        - build_button
-    recurse: False
-```
-
-More about views via Jenkins HTTP API in https://github.com/rsvoboda/rsvoboda-playground/tree/master/jenkins-api#jenkins-and-security-with-csrf-protection 
-
 ## List of Jenkins Plugins
 You can use `get-plugins-info` command, but it's not yet available in tagged version of JJB.
 
@@ -86,3 +57,33 @@ Check [jobs/folders.yaml](jobs/folders.yaml) to see examples. Latest JJB build f
 Commits with the functionality:
  * http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/commit/?id=af9d984baa7f93ba8e846ff30a681d04117397e7
  * http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/commit/?id=8bcd0d0bd2caf9d28d4f55cba712afb20654b591
+
+
+## Backlog: Views via JVB
+I tried https://github.com/piyush0101/jenkins-view-builder
+
+It works fine with security disabled and CSRF Protection disabled.
+With security or CSRF Protection enabled it has troubles to work properly, tested on Jenkins 2.95.
+
+Config used with jenkins-view-builder:
+```yaml
+- view:
+    type: list
+    name: test_jobs
+    description: Sample Test jobs
+    jobs:
+      - test_job
+      - test_job_v2
+      - test_job_v3
+    columns:
+        - status
+        - weather
+        - job
+        - last_success
+        - last_failure
+        - last_duration
+        - build_button
+    recurse: False
+```
+
+More about views via Jenkins HTTP API in https://github.com/rsvoboda/rsvoboda-playground/tree/master/jenkins-api#jenkins-and-security-with-csrf-protection
