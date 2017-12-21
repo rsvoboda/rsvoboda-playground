@@ -1,0 +1,44 @@
+# simple case
+- job:
+    name: folder_test
+    project-type: folder
+
+# case with template
+- job-template:
+    name: 'folder-{name}'
+    project-type: folder
+
+- project:
+    name: asd
+    jobs:
+    - 'folder-{name}'
+
+- project:
+    name: abc
+    jobs:
+    - 'folder-{name}'
+
+# job in folder
+- job:
+    name: test-folder
+    project-type: freestyle
+    folder: folder_test
+
+# folder specified in job name
+- job:
+    name: folder-abc/foo
+    builders:
+      - shell: |
+          ls
+
+# folder specified via defaults
+- defaults:
+    name: team1
+    folder: folder-abc
+
+- job:
+    name: rspec
+    defaults: team1
+    builders:
+      - shell: |
+          ls
