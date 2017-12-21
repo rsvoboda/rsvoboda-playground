@@ -27,7 +27,7 @@ jenkins-jobs --conf jenkins_jobs.ini delete test_job_v2
 jenkins-jobs --conf jenkins_jobs.ini delete -j test_job test_job_v2 test_job_v3 test-comp-a test-comp-b
 ```
 
-## Views
+## Views via JVB
 I tried https://github.com/piyush0101/jenkins-view-builder
 
 It works fine with security disabled and CSRF Protection disabled.
@@ -68,3 +68,9 @@ which jenkins-jobs
 jenkins-jobs --conf jenkins_jobs.ini get-plugins-info -o plugins_info.yaml
 INFO:jenkins_jobs.cli.subcommand.get_plugins_info:Generated plugins_info.yaml file
 ```
+
+## Views in JJB
+See `views.yaml` for list view example. Latest JJB buil d from master is needed.
+Reasonable default columns for list views are available now http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/commit/?id=83592a094bfd8889e50d29019f5f7f12e225deb3
+
+GitHub search for view examples: https://github.com/search?p=1&q=view-type%3A+list&type=Code&utf8=%E2%9C%93

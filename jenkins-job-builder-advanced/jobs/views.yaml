@@ -1,0 +1,16 @@
+- view:
+    name: list-view-name01
+    view-type: list
+    description: 'Sample description'
+    columns:
+        - status
+        - weather
+        - job
+        - last-success
+        - last-failure
+        - last-duration
+        - build-button
+#    job-name:
+#        - test_job
+#        - test_job_v3
+    regex: test.*
