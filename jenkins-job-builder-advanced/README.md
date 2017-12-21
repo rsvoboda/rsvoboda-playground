@@ -56,7 +56,7 @@ Config used with jenkins-view-builder:
 
 More about views via Jenkins HTTP API in https://github.com/rsvoboda/rsvoboda-playground/tree/master/jenkins-api#jenkins-and-security-with-csrf-protection 
 
-## Plugins
+## List of Jenkins Plugins
 You can use `get-plugins-info` command, but it's not yet available in tagged version of JJB.
 
 You need to build the tool from master, follow https://github.com/openstack-infra/jenkins-job-builder/#developers instructions
@@ -70,7 +70,7 @@ INFO:jenkins_jobs.cli.subcommand.get_plugins_info:Generated plugins_info.yaml fi
 ```
 
 ## Views in JJB
-See `views.yaml` for list view example. Latest JJB build from master is needed.
+See [jobs/views.yaml](jobs/views.yaml) for list view example. Latest JJB build from master is needed.
 Reasonable default columns for list views are available now http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/commit/?id=83592a094bfd8889e50d29019f5f7f12e225deb3
 
 GitHub search for view examples: https://github.com/search?p=1&q=view-type%3A+list&type=Code&utf8=%E2%9C%93
@@ -81,7 +81,7 @@ Merge Key Language-Independent Type for YAML version 1.1 is defined in http://ya
 For example usage of `<<:` see `defaults.yaml` and definition of `comp-c-defaults`.
 
 ## Folders in JJB
-See `folders.yaml` for examples. Latest JJB build from master is needed.
+Check [jobs/folders.yaml](jobs/folders.yaml) to see examples. Latest JJB build from master is needed.
 
 Commits with the functionality:
  * http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/commit/?id=af9d984baa7f93ba8e846ff30a681d04117397e7
