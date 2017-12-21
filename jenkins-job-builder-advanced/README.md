@@ -49,7 +49,7 @@ GitHub search for view examples: https://github.com/search?p=1&q=view-type%3A+li
 ## Merge of snippets in YAML aka Aliases and `<<:`
 Merge Key Language-Independent Type for YAML version 1.1 is defined in http://yaml.org/type/merge.html
 
-For example usage of `<<:` see `defaults.yaml` and definition of `comp-c-defaults`.
+For example usage of `<<:` see [jobs/defaults.yaml#L13](jobs/defaults.yaml#L13) and definition of `comp-c-defaults`.
 
 ## Folders in JJB
 Check [jobs/folders.yaml](jobs/folders.yaml) to see examples. Latest JJB build from master is needed.
