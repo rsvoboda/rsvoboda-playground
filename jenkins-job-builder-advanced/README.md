@@ -53,3 +53,18 @@ Config used with jenkins-view-builder:
         - build_button
     recurse: False
 ```
+
+More about views via Jenkins HTTP API in https://github.com/rsvoboda/rsvoboda-playground/tree/master/jenkins-api#jenkins-and-security-with-csrf-protection 
+
+## Plugins
+You can use `get-plugins-info` command, but it's not yet available in tagged version of JJB.
+
+You need to build the tool from master, follow https://github.com/openstack-infra/jenkins-job-builder/#developers instructions
+
+```bash
+which jenkins-jobs 
+~/git/jenkins-job-builder/.venv/bin/jenkins-jobs
+
+jenkins-jobs --conf jenkins_jobs.ini get-plugins-info -o plugins_info.yaml
+INFO:jenkins_jobs.cli.subcommand.get_plugins_info:Generated plugins_info.yaml file
+```
