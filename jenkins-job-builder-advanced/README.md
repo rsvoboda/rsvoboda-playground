@@ -46,7 +46,7 @@ Reasonable default columns for list views are available now http://git.openstack
 
 GitHub search for view examples: https://github.com/search?p=1&q=view-type%3A+list&type=Code&utf8=%E2%9C%93
 
-## Aliases and `<<:` in YAML
+## Merge of snippets in YAML aka Aliases and `<<:`
 Merge Key Language-Independent Type for YAML version 1.1 is defined in http://yaml.org/type/merge.html
 
 For example usage of `<<:` see `defaults.yaml` and definition of `comp-c-defaults`.
