@@ -1,11 +1,40 @@
 = RFE foo bar
+//Foo Bar <foo@bar.com>
+:author: Foo Bar
+:email: foo@bar.com
+:description: A story chronicling
+:keywords: documentation, team, obstacles, journey, victory
+:component: JBossWS
+:level: Intermediate
+:technologies: WS-AT, JAX-WS
+:requirements: aaa bbb ccc ddd
+:nofooter:
+//include::default-attributes.adoc[]
+
+
+[abstract]
+foo bar abstract
 
 == Introduction
 
 This document tracks the necessary information required to test foo bar.
 
+My first name is {firstname}.
+
+My last name is {lastname}.
+
+My initials are {authorinitials}.
+
+My email is {email}
+
+Level: {level}
 
 == Testing
+fooo line
+
+.asa
+dsds
+sds
 
 === Smoke testing
 
