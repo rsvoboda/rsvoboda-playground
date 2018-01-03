@@ -70,3 +70,5 @@ Rostislav's Playgroung
 [jenkins-api](jenkins-api) - Jenkins HTTP API experiment
 
 [asciidoc-metadata](asciidoc-metadata) - AsciiDoc and meta-data
+
+[simple-http-and-https-server](simple-http-and-https-server) - Simple HTTP and HTTPS Server
