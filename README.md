@@ -72,3 +72,5 @@ Rostislav's Playgroung
 [asciidoc-metadata](asciidoc-metadata) - AsciiDoc and meta-data
 
 [simple-http-and-https-server](simple-http-and-https-server) - Simple HTTP and HTTPS Server
+
+[sonarwhal](sonarwhal) - Sonarwhal - A linting tool for the web
