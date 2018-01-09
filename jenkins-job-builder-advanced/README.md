@@ -27,6 +27,14 @@ jenkins-jobs --conf jenkins_jobs.ini delete test_job_v2
 jenkins-jobs --conf jenkins_jobs.ini delete -j test_job test_job_v2 test_job_v3 test-comp-a test-comp-b
 ```
 
+## JJB early 2018 update
+JJB version 2.0.0.0b3 was released on January 15, 2018. Builds from master are not needed anymore.
+```bash
+pip install --user --upgrade jenkins-job-builder==2.0.0.0b3
+## or
+pip install --upgrade jenkins-job-builder==2.0.0.0b3
+```
+
 ## List of Jenkins Plugins
 You can use `get-plugins-info` command, but it's not yet available in tagged version of JJB.
 
