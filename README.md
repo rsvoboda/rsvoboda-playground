@@ -74,3 +74,5 @@ Rostislav's Playgroung
 [simple-http-and-https-server](simple-http-and-https-server) - Simple HTTP and HTTPS Server
 
 [sonarwhal](sonarwhal) - Sonarwhal - A linting tool for the web
+
+[jax-rs-system-properties] (jax-rs-system-properties) - Expose System Properties via JAX-RS endpoint
