@@ -35,6 +35,16 @@ pip install --user --upgrade jenkins-job-builder==2.0.0.0b3
 pip install --upgrade jenkins-job-builder==2.0.0.0b3
 ```
 
+### Jenkins LTS 2.60.3 summary
+folder.yaml is not working with default plugin set.
+```
+Caused by: java.lang.ClassCastException: jenkins.model.BuildDiscarderProperty cannot be cast to com.cloudbees.hudson.plugins.folder.AbstractFolderProperty
+```
+Additional investigation in progress
+
+### Jenkins LTS 2.89.2 summary
+Same as for 2.60.3
+
 ## List of Jenkins Plugins
 You can use `get-plugins-info` command, but it's not yet available in tagged version of JJB.
 
