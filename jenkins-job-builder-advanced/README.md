@@ -35,6 +35,14 @@ pip install --user --upgrade jenkins-job-builder==2.0.0.0b3
 pip install --upgrade jenkins-job-builder==2.0.0.0b3
 ```
 
+Since Jan 12, 2018 JJB is available in version 2.0.0
+See https://github.com/openstack-infra/jenkins-job-builder/releases
+```bash
+pip install --user --upgrade jenkins-job-builder==2.0.0
+## or
+pip install --upgrade jenkins-job-builder==2.0.0
+```
+
 ### Jenkins LTS 2.60.3 summary
 folder.yaml is not working with default plugin set.
 ```
