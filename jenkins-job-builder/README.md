@@ -44,3 +44,6 @@ jenkins-jobs --conf jenkins_jobs.ini update foo.yml
  * jjb-pipeline-2-jobs.yml
  * jjb-pipeline-scm.yml
  * jjb-pipeline-script.yml
+ * jjb-maven-pretty-print.yml
+   * https://plugins.jenkins.io/maven-plugin
+   * https://plugins.jenkins.io/description-setter
