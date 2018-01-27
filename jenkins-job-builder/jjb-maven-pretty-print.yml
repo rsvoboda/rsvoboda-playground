@@ -1,0 +1,27 @@
+- job:
+    name: jjb-maven-pretty-print
+    description: 'Pretty Print / VDX testsuite job'
+    project-type: maven
+    jdk: jdk-1.8
+#    node: linux
+
+    scm:
+      - git:
+            branches:
+              - '*/master'
+            url: 'https://github.com/jboss-eap-qe/vdx-wildfly-testsuite.git'
+
+    maven:
+      root-pom: pom.xml
+      goals: -P all test
+      maven-name: maven-3.5
+      maven-opts: '-Xms64m -Xmx512m -XX:MaxMetaspaceSize=128m'
+      run-headless: true
+
+    wrappers:
+      - timestamps
+
+    publishers:
+      - description-setter:
+          description: "${GIT_COMMIT}"
+          description-for-failed: "${GIT_COMMIT}"
