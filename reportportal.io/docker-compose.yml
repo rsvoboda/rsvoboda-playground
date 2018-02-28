@@ -1,0 +1,87 @@
+﻿version: '2'
+services:
+  mongodb:
+    image: 'mongo:3.4'
+    volumes:
+      - './data/mongo:/data/db'
+    restart: always
+  registry:
+    image: 'consul:1.0.6'
+    volumes:
+      - './data/consul:/consul/data'
+    ports:
+      - '8500:8500'
+    command: agent -server -bootstrap-expect=1 -ui -client 0.0.0.0
+    environment:
+      - 'CONSUL_LOCAL_CONFIG={"leave_on_terminate": true}'
+    restart: always
+  uat:
+    image: 'reportportal/service-authorization:4.0.0'
+    depends_on:
+      - mongodb
+    environment:
+      - RP_PROFILES=docker
+      - RP_SESSION_LIVE=86400
+    restart: always
+  gateway:
+    image: 'fabiolb/fabio:1.5.8-go1.10'
+    ports:
+      - '9998:9998'
+      - '8080:9999'
+    environment:
+      - 'FABIO_REGISTRY_CONSUL_ADDR=registry:8500'
+      - FABIO_REGISTRY_CONSUL_REGISTER_NAME=gateway
+      - 'FABIO_PROXY_ADDR=:9999;rt=300s;wt=300s'
+    restart: always
+  index:
+    image: 'reportportal/service-index:4.0.0'
+    environment:
+      - RP_SERVER_PORT=8080
+      - RP_PROXY_CONSUL=true
+    depends_on:
+      - registry
+      - gateway
+    restart: always
+  api:
+    image: 'reportportal/service-api:4.0.0'
+    depends_on:
+      - mongodb
+    environment:
+      - RP_PROFILES=docker
+      - 'JAVA_OPTS=-Xmx1g -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp'
+    restart: always
+  ui:
+    image: 'reportportal/service-ui:4.0.0'
+    environment:
+      - RP_SERVER.PORT=8080
+      - RP_CONSUL.TAGS=urlprefix-/ui opts strip=/ui
+      - 'RP_CONSUL.ADDRESS=registry:8500'
+    restart: always
+  analyzer:
+    image: 'reportportal/service-analyzer:4.0.0'
+    depends_on:
+      - registry
+      - gateway
+      - elasticsearch
+    restart: always
+  elasticsearch:
+    image: 'docker.elastic.co/elasticsearch/elasticsearch-oss:6.1.1'
+    restart: always
+    volumes:
+      - './data/elasticsearch:/usr/share/elasticsearch/data'
+    environment:
+      - bootstrap.memory_lock=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+  jira:
+    image: 'reportportal/service-jira:4.0.0'
+    environment:
+      - RP_PROFILES=docker
+    restart: always
+  rally:
+    image: 'reportportal/service-rally:4.0.0'
+    environment:
+      - RP_PROFILES=docker
+    restart: always

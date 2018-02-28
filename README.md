@@ -76,3 +76,5 @@ Rostislav's Playgroung
 [sonarwhal](sonarwhal) - Sonarwhal - A linting tool for the web
 
 [jax-rs-system-properties](jax-rs-system-properties) - Expose System Properties via JAX-RS endpoint
+
+[reportportal.io](reportportal.io) - ReportPortal.io - test results management tool
