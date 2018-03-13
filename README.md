@@ -80,3 +80,5 @@ Rostislav's Playgroung
 [reportportal.io](reportportal.io) - ReportPortal.io - test results management tool
 
 [SonarQubeAndTypeScript](SonarQubeAndTypeScript) - SonarQube and TypeScript analysis
+
+[git-tricks](git-tricks) - Git tricks
