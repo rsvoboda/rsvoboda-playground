@@ -82,3 +82,5 @@ Rostislav's Playgroung
 [SonarQubeAndTypeScript](SonarQubeAndTypeScript) - SonarQube and TypeScript analysis
 
 [git-tricks](git-tricks) - Git tricks
+
+[wildfly-quistarts](wildfly-quistarts) - WildFly Application Server (WildFly) Quickstarts
