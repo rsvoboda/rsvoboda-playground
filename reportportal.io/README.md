@@ -130,7 +130,7 @@ curl -X POST --header 'Content-Type: multipart/form-data' --header 'Authorizatio
  - Maven / surefire integration is not working
  - REST API is working, have some confusion from it though
  - UI is nice
- - UI doesn't support bulk changes
+ - UI doesn't support bulk changes per multiple runs
  - No Test Case management
  - Had to mark failed test in all runs manually as "bug in the code"
  - No aggregated view on selected runs / testsuites
