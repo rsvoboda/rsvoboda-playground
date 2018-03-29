@@ -84,3 +84,5 @@ Rostislav's Playgroung
 [git-tricks](git-tricks) - Git tricks
 
 [wildfly-quistarts](wildfly-quistarts) - WildFly Application Server (WildFly) Quickstarts
+
+[japicmp-and-wildfly](japicmp-and-wildfly) - japicmp and WildFly
