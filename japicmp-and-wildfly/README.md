@@ -29,3 +29,19 @@ Prepared https://github.com/rsvoboda/japicmp/tree/npeChecks to overcome NPE prob
 java -Xmx6G -jar /Users/rsvoboda/git/japicmp/japicmp/target/japicmp-0.11.2-SNAPSHOT-jar-with-dependencies.jar -n wildfly-12.0.0.Final-all-in-one.zip -o wildfly-11.0.0.Final-all-in-one.zip --ignore-missing-classes --only-modified --html-file compare.html
 ```
 Generated report is huge, around 60 MB.
+
+## generate API diff - ignore private and unsupported naive way
+Use https://github.com/rsvoboda/japicmp/tree/npeChecks to overcome NPE problems.
+
+```bash
+for i in `find wildfly-12.0.0.Final | grep module.xml | xargs grep -L 'value="private"' | xargs grep -L  'value="unsupported"' | sed "s/module.xml//g" | xargs find | grep '\.jar$'`; do echo $i; unzip -q -o -d wildfly-12.0.0.Final-all-in-one $i; done
+rm -rf wildfly-12.0.0.Final-all-in-one/META-INF wildfly-12.0.0.Final-all-in-one/WEB-INF wildfly-12.0.0.Final-all-in-one/OSGI-INF
+cd wildfly-12.0.0.Final-all-in-one; zip ../wildfly-12.0.0.Final-all-in-one.zip -q -r *; cd -
+
+for i in `find wildfly-11.0.0.Final | grep module.xml | xargs grep -L 'value="private"' | xargs grep -L  'value="unsupported"' | sed "s/module.xml//g" | xargs find | grep '\.jar$'`; do echo $i; unzip -q -o -d wildfly-11.0.0.Final-all-in-one $i; done
+rm -rf wildfly-11.0.0.Final-all-in-one/META-INF wildfly-11.0.0.Final-all-in-one/WEB-INF wildfly-11.0.0.Final-all-in-one/OSGI-INF
+cd wildfly-11.0.0.Final-all-in-one; zip ../wildfly-11.0.0.Final-all-in-one.zip -q -r *; cd -
+
+java -Xmx6G -jar /Users/rsvoboda/git/japicmp/japicmp/target/japicmp-0.11.2-SNAPSHOT-jar-with-dependencies.jar -n wildfly-12.0.0.Final-all-in-one.zip -o wildfly-11.0.0.Final-all-in-one.zip --ignore-missing-classes --only-modified --html-file compare.html
+```
+Generated report is huge, around 8 MB.
