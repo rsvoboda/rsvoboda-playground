@@ -87,4 +87,4 @@ Rostislav's Playgroung
 
 [japicmp-and-wildfly](japicmp-and-wildfly) - japicmp and WildFly
 
-[revapi-and-wildfly] (revapi-and-wildfly) - Revapi and WildFly
+[revapi-and-wildfly](revapi-and-wildfly) - Revapi and WildFly
