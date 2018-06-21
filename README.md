@@ -88,3 +88,5 @@ Rostislav's Playgroung
 [japicmp-and-wildfly](japicmp-and-wildfly) - japicmp and WildFly
 
 [revapi-and-wildfly](revapi-and-wildfly) - Revapi and WildFly
+
+[doxygen](doxygen) - Doxygen for WildFly + WildFly Core
