@@ -90,3 +90,5 @@ Rostislav's Playgroung
 [revapi-and-wildfly](revapi-and-wildfly) - Revapi and WildFly
 
 [doxygen](doxygen) - Doxygen for WildFly + WildFly Core
+
+[microprofile-config-open-liberty](microprofile-config-open-liberty) - MicroProfile Config on Open Liberty
