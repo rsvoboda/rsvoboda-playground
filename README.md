@@ -92,3 +92,5 @@ Rostislav's Playgroung
 [doxygen](doxygen) - Doxygen for WildFly + WildFly Core
 
 [microprofile-config-open-liberty](microprofile-config-open-liberty) - MicroProfile Config on Open Liberty
+
+[microprofile-config-simple-servlet](microprofile-config-simple-servlet) - MicroProfile Config - Simple Servlet Scenario
