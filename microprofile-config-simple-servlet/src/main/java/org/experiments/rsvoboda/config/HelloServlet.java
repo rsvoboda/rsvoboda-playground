@@ -18,6 +18,8 @@ public class HelloServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        //int port = ConfigProvider.getConfig().getValue("port_number", Integer.class);
+
         resp.getWriter().println("Value of port: " + port);
     }
 }
