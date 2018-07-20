@@ -19,5 +19,7 @@ cp target/microprofile-health.war ~/tmp/wlp/usr/servers/mp/dropins/
 
 ## Run
 ```bash
-curl http://localhost:9080/health
+curl -v http://localhost:9080/health
 ```
+
+Check also response code and invoke it for few times to see some UPs and DOWNs.
