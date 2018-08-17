@@ -94,3 +94,9 @@ Rostislav's Playgroung
 [microprofile-config-open-liberty](microprofile-config-open-liberty) - MicroProfile Config on Open Liberty
 
 [microprofile-config-simple-servlet](microprofile-config-simple-servlet) - MicroProfile Config - Simple Servlet Scenario
+
+[microprofile-config-custom-converter-and-source](microprofile-config-custom-converter-and-source) - MicroProfile Config - Custom Converter And Source
+
+[microprofile-health-open-liberty](microprofile-health-open-liberty) - MicroProfile Health - one application
+
+[microprofile-health-multimodule](microprofile-health-multimodule) - MicroProfile Health - multi-module application, health checks in lib module and app module

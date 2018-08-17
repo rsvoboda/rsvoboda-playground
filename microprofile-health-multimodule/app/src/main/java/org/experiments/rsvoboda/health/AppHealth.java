@@ -12,6 +12,8 @@ public class AppHealth implements HealthCheck {
     public HealthCheckResponse call() {
         Random rand = new Random();
 
+//        throw new RuntimeException("bad bad exception");
+
         if (rand.nextInt(2) == 0) {
             return HealthCheckResponse.named("AppHealth")
                     .withData("application", "not available").down()
