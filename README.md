@@ -100,3 +100,5 @@ Rostislav's Playgroung
 [microprofile-health-open-liberty](microprofile-health-open-liberty) - MicroProfile Health - one application
 
 [microprofile-health-multimodule](microprofile-health-multimodule) - MicroProfile Health - multi-module application, health checks in lib module and app module
+
+[git-analysis-tools](git-analysis-tools) - Git analysis tools
