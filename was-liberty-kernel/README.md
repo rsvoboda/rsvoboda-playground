@@ -1,6 +1,13 @@
 # WAS Liberty Kernel experiments
 Experiments with WAS Liberty Kernel https://developer.ibm.com/wasdev/downloads/#asset/runtimes-wlp-kernel and `wlp/bin/installUtility` tool.
 
+**Table of Contents**
+* [First steps](#first-steps)
+* [MicroProfile install experiment](#microprofile-install-experiment)
+* [First server](#first-server)
+* [MP Health minimal server](#mp-health-minimal-server)
+* [Server with example application](#server-with-example-application)
+
 ## First steps
 ```
 wget https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/downloads/wlp/18.0.0.2/wlp-kernel-18.0.0.2.zip
