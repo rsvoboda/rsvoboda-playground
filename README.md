@@ -102,3 +102,5 @@ Rostislav's Playgroung
 [microprofile-health-multimodule](microprofile-health-multimodule) - MicroProfile Health - multi-module application, health checks in lib module and app module
 
 [git-analysis-tools](git-analysis-tools) - Git analysis tools
+
+[was-liberty-kernel](was-liberty-kernel) - WAS Liberty Kernel experiments
