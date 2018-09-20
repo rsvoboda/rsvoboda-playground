@@ -142,3 +142,6 @@ docker rm $(docker ps -a -q)
 docker rmi $(docker images -q)
 docker volume ls -qf dangling=true | xargs  docker volume rm
 ```
+
+## ReportPortal 4.2.0 update
+In short - no exception from maven run when using agent-java-junit version 2.7.2., but still no data were uploaded :( Import via curl worked fine. UI works nicely for vdx-wildfly-testsuite size.
