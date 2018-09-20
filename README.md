@@ -106,3 +106,5 @@ Rostislav's Playgroung
 [was-liberty-kernel](was-liberty-kernel) - WAS Liberty Kernel experiments
 
 [galleon-provisioning](galleon-provisioning) - Galleon Provisioning For WildFly
+
+[jenkins-jobs-backup-restore] (jenkins-jobs-backup-restore) - Jenkins jobs backup / restore / new jobs
