@@ -178,3 +178,27 @@ api_1            | 	at org.springframework.cglib.proxy.MethodProxy.invoke(Method
 api_1            | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.13.RELEASE.jar!/:4.3.13.RELEASE]
 ...
 ```
+
+Filed issue: https://github.com/reportportal/service-api/issues/370
+
+### Push of .zip with 100+ test results
+I tried to push .zip with results from test suites (integration tests) of https://github.com/resteasy/Resteasy and https://github.com/wildfly/wildfly projects. Zip file from WildFly contained 1171 `TEST-*.xml` files.
+
+I used following command to archive just `TEST*.xml` files:
+```bash
+zip -r xxx.zip . -i '**/TEST*.xml'
+```
+
+```bash
+time curl -X POST --header 'Content-Type: multipart/form-data' --header 'Authorization: bearer 3b3763f3-6a48-4314-aba4-888851753c52' -F file=@ts2.zip 'http://localhost:8080/api/v1/default_personal/launch/import'
+{"msg":"Launch with id = 5ba4ab801aa8410001ad27bf is successfully imported."}
+real	0m11.148s
+user	0m0.021s
+sys	0m0.053s
+
+unzip -l ts2.zip | tail -1
+297394529                     1171 files
+```
+
+I downloaded zip with `TEST*.xml` files for WildFly from our CI server, but I hit https://github.com/reportportal/service-api/issues/370 issue with it because the zip contained additional files and server log contained `com.epam.ta.reportportal.exception.ReportPortalException: Error while importing the file. 'Error during parsing the xml file: 'The element type "subsystem" must be terminated by the matching end-tag "</subsystem>`
+I had to workaround this by creating another .zip file with just `TEST-*.xml` files.
