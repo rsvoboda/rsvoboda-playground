@@ -145,3 +145,36 @@ docker volume ls -qf dangling=true | xargs  docker volume rm
 
 ## ReportPortal 4.2.0 update
 In short - no exception from maven run when using agent-java-junit version 2.7.2., but still no data were uploaded :( Import via curl worked fine. UI works nicely for vdx-wildfly-testsuite size.
+
+### Push of .zip with test results
+Experiments with .zip structure, using vdx-wildfly-testsuite test results.
+```bash
+cd target/surefire-reports && zip xxx.zip *.xml && cd - && mv target/surefire-reports/xxx.zip .
+zip -r yyy.zip target/surefire-reports
+zip -r zzz.zip target/surefire-reports target/test-*
+
+curl -X POST --header 'Content-Type: multipart/form-data' --header 'Authorization: bearer 3b3763f3-6a48-4314-aba4-888851753c52' -F file=@xxx.zip 'http://localhost:8080/api/v1/default_personal/launch/import'
+## {"msg":"Launch with id = 5ba4959e1aa8410001ac6ba1 is successfully imported."}
+curl -X POST --header 'Content-Type: multipart/form-data' --header 'Authorization: bearer 3b3763f3-6a48-4314-aba4-888851753c52' -F file=@yyy.zip 'http://localhost:8080/api/v1/default_personal/launch/import'
+## {"msg":"Launch with id = 5ba495f71aa8410001ac6bce is successfully imported."}
+
+curl -X POST --header 'Content-Type: multipart/form-data' --header 'Authorization: bearer 3b3763f3-6a48-4314-aba4-888851753c52' -F file=@zzz.zip 'http://localhost:8080/api/v1/default_personal/launch/import'
+## {"error_code":40035,"message":"Error while importing the file. 'Error during parsing the xml file: 'Premature end of file.''"}
+```
+Server error for zzz.zip case:
+```
+...
+api_1            | 2018-09-21 05:13:09.281  WARN 1 --- [pool-1-thread-2] c.e.t.r.c.i.i.junit.XunitImportHandler   : Unknown tag: subsystem
+api_1            | 2018-09-21 05:13:09.281  WARN 1 --- [pool-1-thread-2] c.e.t.r.c.i.i.junit.XunitImportHandler   : Unknown tag: subsystem
+api_1            | 2018-09-21 05:13:09.279 ERROR 1 --- [nio-8080-exec-4] c.e.t.r.c.e.rest.RestExceptionHandler    : Handled error:
+api_1            |
+api_1            | com.epam.ta.reportportal.exception.ReportPortalException: Error while importing the file. 'Error during parsing the xml file: 'Premature end of file.''
+api_1            | 	at com.epam.ta.reportportal.core.imprt.impl.junit.XunitImportStrategy.processZipFile(XunitImportStrategy.java:107) ~[classes!/:na]
+api_1            | 	at com.epam.ta.reportportal.core.imprt.impl.junit.XunitImportStrategy.importLaunch(XunitImportStrategy.java:79) ~[classes!/:na]
+api_1            | 	at com.epam.ta.reportportal.core.imprt.ImportLaunchHandlerImpl.importLaunch(ImportLaunchHandlerImpl.java:74) ~[classes!/:na]
+api_1            | 	at com.epam.ta.reportportal.ws.controller.impl.LaunchController.importLaunch(LaunchController.java:352) ~[classes!/:na]
+api_1            | 	at com.epam.ta.reportportal.ws.controller.impl.LaunchController$$FastClassBySpringCGLIB$$3972bc66.invoke(<generated>) ~[classes!/:na]
+api_1            | 	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.13.RELEASE.jar!/:4.3.13.RELEASE]
+api_1            | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.13.RELEASE.jar!/:4.3.13.RELEASE]
+...
+```
