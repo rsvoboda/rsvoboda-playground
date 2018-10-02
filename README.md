@@ -110,3 +110,5 @@ Rostislav's Playgroung
 [jenkins-jobs-backup-restore] (jenkins-jobs-backup-restore) - Jenkins jobs backup / restore / new jobs
 
 [graalvm-substratevm-HelloWorld](graalvm-substratevm-HelloWorld) - HelloWorld with SubstrateVM / GraalVM
+
+[gitpod.io-based-commit](gitpod.io-based-commit) - Gitpod.io based commit
