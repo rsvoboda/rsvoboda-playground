@@ -15,7 +15,7 @@ galleon-2.0.0.Final/bin/galleon.sh
 
 ## Build it
 ```
-git clone git@github.com:wildfly/ç.git
+git clone git@github.com:wildfly/galleon.git
 cd galleon
 mvn clean install -DskipTests -Denforcer.skip=true -Dcheckstyle.skip=true -Drelease
 ```
