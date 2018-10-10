@@ -40,3 +40,30 @@ For latest docs see `dist/target/galleon-3.0.0.Alpha1-SNAPSHOT/docs/index.html`
 
 ## Feedback
 https://issues.jboss.org/browse/GAL-125 was created based on the feedback
+
+## Round 2 - updates
+
+Update from 14.0.0.Final to the latest available .Final (14.0.1.Final at the moment)
+```bash
+install --dir=/Users/rsvoboda/tmp/asd wildfly:current#14.0.0.Final
+update --dir=/Users/rsvoboda/tmp/asd
+```
+
+Update from 14.0.0.Final (notice current/snapshot for install command) to the latest available -SNAPSHOT (for experiments/development only)
+```bash
+install --dir=/Users/rsvoboda/tmp/snap wildfly:current/snapshot#14.0.0.Final
+update --dir=/Users/rsvoboda/tmp/snap
+```
+
+Update from 14.0.0.Final (provisioned from current/snapshot) to the latest available .Final
+```bash
+install --dir=/Users/rsvoboda/tmp/snap wildfly:current/snapshot#14.0.0.Final
+code /Users/rsvoboda/tmp/snap/.galleon/provisioning.xml
+##<feature-pack location="wildfly@maven(org.jboss.universe:community-universe):current/snapshot#14.0.0.Final"/>
+## change to
+##<feature-pack location="wildfly@maven(org.jboss.universe:community-universe):current#14.0.0.Final"/>
+update --dir=/Users/rsvoboda/tmp/snap
+```
+
+## Feedback for round 2
+Issues from https://issues.jboss.org/browse/GAL-179 to https://issues.jboss.org/browse/GAL-183.
