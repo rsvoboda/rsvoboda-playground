@@ -67,3 +67,16 @@ update --dir=/Users/rsvoboda/tmp/snap
 
 ## Feedback for round 2
 Issues from https://issues.jboss.org/browse/GAL-179 to https://issues.jboss.org/browse/GAL-183.
+
+
+## Know limitations as of 2018-10-11
+ - currently one chanel `current`, more are planned, strategy for it needs to be properly analyzed
+ - FP version update in place, not cross FP upgrade
+ - `filesystem cd/ls/pw` commands will become top level commands
+
+Following command causes error at this moment as the latest wildfly-core final release is 6.0.2.Final and WF snapshot depends on 7.0.0.Alpha2 and there are some new classes in 7.0.0.Alpha2 which are used by WF snapshot. 
+```
+install --dir=/Users/rsvoboda/tmp/xxx wildfly-core:current/final
+install --dir=/Users/rsvoboda/tmp/xxx wildfly:current/snapshot
+```
+By calling these commands user explicitly defines wildfly-core version and upgrade to WF doesn't do wildfly-core version change.
