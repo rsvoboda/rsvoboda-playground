@@ -132,3 +132,7 @@ unzip -l target/demo-swarm.jar | grep cdi_extension
 ```
 
 Version 2017.12.0 has dependency issue - https://issues.jboss.org/browse/SWARM-1735
+
+## Payara
+
+## Apache TomEE
