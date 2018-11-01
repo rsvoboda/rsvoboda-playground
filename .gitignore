@@ -33,3 +33,6 @@ prometheus-2*
 
 .vscode/
 audit.log
+
+Prometheus/quickstart-mp
+Prometheus/payara*

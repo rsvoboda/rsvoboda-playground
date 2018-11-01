@@ -1,10 +1,14 @@
 scrape_configs:
-  # Configuration to poll from WildFly Swarm
-  - job_name: 'swarm'
+  # Configuration to poll from Thorntail
+  - job_name: 'thorntail'
     scrape_interval: 15s
-    # translates to http://localhost:8080/metrics
     static_configs:
-      - targets: ['localhost:8080']
+      - targets: ['localhost:8280']
+# Configuration to poll from WildFly
+  - job_name: 'wildfly'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['localhost:10090']
   # Configuration to poll from OpenLiberty
   - job_name: 'liberty'
     scrape_interval: 15s
@@ -17,3 +21,13 @@ scrape_configs:
     # translates to https://localhost:9443/metrics
     static_configs:
       - targets: ['localhost:9443']
+  # Configuration to poll from Payara
+  - job_name: 'payara'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['localhost:7080']
+# Configuration to poll from Helidon
+  - job_name: 'helidon'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['localhost:8080']
