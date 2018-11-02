@@ -202,3 +202,12 @@ unzip -l ts2.zip | tail -1
 
 I downloaded zip with `TEST*.xml` files for WildFly from our CI server, but I hit https://github.com/reportportal/service-api/issues/370 issue with it because the zip contained additional files and server log contained `com.epam.ta.reportportal.exception.ReportPortalException: Error while importing the file. 'Error during parsing the xml file: 'The element type "subsystem" must be terminated by the matching end-tag "</subsystem>`
 I had to workaround this by creating another .zip file with just `TEST-*.xml` files.
+
+## ReportPortal status update 2018-11-02 - feature requests / questions / bugs
+Summary:
+ * https://github.com/reportportal/service-api/issues/370
+ * https://github.com/reportportal/reportportal/issues/created_by/rsvoboda
+ * https://github.com/reportportal/reportportal/issues/created_by/rplevka 
+
+New Maven plugin for JUnit in development - https://github.com/reportportal/agent-java-junit/tree/v4
+Seems to have complicated setup, will for adoption in upstream projects can be questionable.
