@@ -38,6 +38,11 @@ public class CoffeesResource {
         curl http://127.0.0.1:9990/metrics/application/itemsSold -H "Accept: application/json"
         curl http://127.0.0.1:9990/metrics/application/itemsSold
            Output / values diff
+
+        curl http://localhost:9080/hello-prometheus/resources/coffee/sold
+        curl https://localhost:9443/metrics/application/itemsSold -H "Accept: application/json" --insecure -u theUser:thePassword 2>/dev/null | jq
+        curl https://localhost:9443/metrics/application/itemsSold --insecure -u theUser:thePassword 2>/dev/null | grep -v TYPE | grep -v HELP
+            OpenLiberty is fine
     */
     @Metered(name = "itemsSold",
             unit = MetricUnits.MINUTES,
@@ -54,6 +59,12 @@ public class CoffeesResource {
         curl http://127.0.0.1:9990/metrics/application/itemsProcessed -H "Accept: application/json"
         curl http://127.0.0.1:9990/metrics/application/itemsProcessed
            Output / values diff
+
+        curl http://localhost:9080/hello-prometheus/resources/coffee/process
+        curl http://localhost:9080/hello-prometheus/resources/coffee/process
+        curl https://localhost:9443/metrics/application/itemsProcessed -H "Accept: application/json" --insecure -u theUser:thePassword 2>/dev/null | jq
+        curl https://localhost:9443/metrics/application/itemsProcessed --insecure -u theUser:thePassword 2>/dev/null | grep -v TYPE | grep -v HELP
+            OpenLiberty is fine
     */
     @Timed(name = "itemsProcessed",
             description = "Metrics to monitor the times of processItem method. - @Timed(",
@@ -71,6 +82,14 @@ public class CoffeesResource {
         curl http://127.0.0.1:9990/metrics/application/itemsAdded
         curl http://localhost:8080/hello-prometheus/resources/coffee/add/5
            Caused by: java.lang.IllegalArgumentException: Previously registered metric itemsAdded was not flagged as reusable
+
+        curl http://localhost:9080/hello-prometheus/resources/coffee/add/5
+        curl https://localhost:9443/metrics/application/itemsAdded -H "Accept: application/json" --insecure -u theUser:thePassword 2>/dev/null | jq
+        curl https://localhost:9443/metrics/application/itemsAdded --insecure -u theUser:thePassword 2>/dev/null | grep -v TYPE | grep -v HELP
+        curl http://localhost:9080/hello-prometheus/resources/coffee/add/5
+        curl http://localhost:9080/hello-prometheus/resources/coffee/add/2
+        curl http://localhost:9080/hello-prometheus/resources/coffee/add/1
+            OpenLiberty is fine
         */
     @GET
     @Path("/add/{numberOfItems}")
