@@ -100,4 +100,66 @@ public class CoffeesResource {
         return Response.ok().build();
     }
 
+
+    // examples from https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/cwlp_mp_metrics_api.html
+
+    Metadata statsHitsCounterMetadata = new Metadata(
+            "statsHits",
+            "Stats Hits",
+            "Number of hits on the /stats endpoint",
+            MetricType.COUNTER,
+            MetricUnits.NONE);
+
+    /*
+        curl http://localhost:8080/hello-prometheus/resources/coffee/stats
+        curl http://localhost:8080/hello-prometheus/resources/coffee/stats
+            Caused by: java.lang.IllegalArgumentException: Previously registered metric statsHits was not flagged as reusable
+
+        curl http://localhost:9080/hello-prometheus/resources/coffee/stats
+        curl http://localhost:9080/hello-prometheus/resources/coffee/stats
+        curl http://localhost:9080/hello-prometheus/resources/coffee/stats
+        curl -k -u theUser:thePassword https://localhost:9443/metrics/application/statsHits
+        curl -k -u theUser:thePassword -H "Accept: application/json" https://localhost:9443/metrics/application/statsHits
+            OpenLiberty is fine
+     */
+    @GET
+    @Path("/stats")
+    public String getTotalDonations() {
+        registry.counter(statsHitsCounterMetadata).inc();
+
+        return "12345";
+    }
+
+
+    Gauge<Double> progressGauge = new Gauge<Double>() {
+        public Double getValue() {
+            return Math.random() * 100;
+        }
+    };
+    Metadata progressMetadata = new Metadata(
+            "progress",
+            "Donation Progress",
+            "The percentage of the goal achieved so far",
+            MetricType.GAUGE,
+            MetricUnits.PERCENT);
+
+    /*
+        curl http://localhost:8080/hello-prometheus/resources/coffee/donation
+        curl http://localhost:8080/hello-prometheus/resources/coffee/donation
+            Caused by: java.lang.IllegalArgumentException: A metric with name progress already exists
+        curl http://127.0.0.1:9990/metrics/application/progress
+
+        curl http://localhost:9080/hello-prometheus/resources/coffee/donation
+        curl -k -u theUser:thePassword https://localhost:9443/metrics/application/progress
+        curl -k -u theUser:thePassword -H "Accept: application/json" https://localhost:9443/metrics/application/progress
+
+     */
+    @GET
+    @Path("/donation")
+    public Response updateGauge() {
+        registry.register(progressMetadata, progressGauge);
+        return Response.ok().build();
+    }
+
+
 }
