@@ -20,4 +20,12 @@ public class HelloControllerTest {
                 helloClient.hello().blockingGet(),
                 "Endpoint didn't provide expected response");
     }
+
+    @Test
+    void testHelloWithName() {
+        assertEquals(
+                "Hello Bob!",
+                helloClient.helloWithName("Bob").blockingGet(),
+                "Endpoint didn't provide expected response with name");
+    }
 }
