@@ -34,7 +34,7 @@ Binary produced by rc10 is much smaller (less than 50 %) comparing to binary pro
 
 ```
 
-Interesting is also difference between image size difference between Community Edition (CE) and Enterprise Edition (EE) - to be precise 2.2 MB vs 1.9 MB.
+Interesting is also image size difference between Community Edition (CE) and Enterprise Edition (EE) - to be precise 2.2 MB vs 1.9 MB.
 ```bash
 ll -h helloworld-*
 -rwxr-xr-x  1 rsvoboda  staff   2.2M Dec 10 13:25 helloworld-ce
@@ -43,3 +43,5 @@ ll -h helloworld-*
 -rwxr-xr-x  1 rsvoboda  staff   1.9M Dec 10 13:25 helloworld-ee-v2
 -rwxr-xr-x@ 1 rsvoboda  staff   5.0M Sep 17 15:37 helloworld-rc6
 ```
+
+This is probably due to different default arguments for CE and EE distributions.
