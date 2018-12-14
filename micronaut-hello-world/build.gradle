@@ -33,6 +33,8 @@ dependencies {
     compile "io.micronaut:micronaut-http-server-netty"
     compileOnly "io.micronaut:micronaut-inject-java"
     runtime "ch.qos.logback:logback-classic:1.2.3"
+    // runtime "io.micronaut:micronaut-graal"  ???
+    // compileOnly "com.oracle.substratevm:svm"
     testCompile "io.micronaut:micronaut-inject-java"
     testCompile "io.micronaut.test:micronaut-test-junit5:1.0.0.RC2"
     testCompile "org.mockito:mockito-junit-jupiter:2.22.0"

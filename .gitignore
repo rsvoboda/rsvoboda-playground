@@ -36,3 +36,5 @@ audit.log
 
 Prometheus/quickstart-mp
 Prometheus/payara*
+
+micronaut-hello-world/micronaut-hello-world
