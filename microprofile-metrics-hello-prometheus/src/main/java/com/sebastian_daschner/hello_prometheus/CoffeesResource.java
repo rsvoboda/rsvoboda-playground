@@ -125,6 +125,8 @@ public class CoffeesResource {
     @GET
     @Path("/stats")
     public String getTotalDonations() {
+        // https://github.com/smallrye/smallrye-metrics/issues/43#issuecomment-446498898
+        statsHitsCounterMetadata.setReusable(true);
         registry.counter(statsHitsCounterMetadata).inc();
 
         return "12345";
