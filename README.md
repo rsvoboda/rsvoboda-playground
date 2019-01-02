@@ -114,3 +114,5 @@ Rostislav's Playgroung
 [gitpod.io-based-commit](gitpod.io-based-commit) - Gitpod.io based commit
 
 [microprofile-metrics-tck-notes](microprofile-metrics-tck-notes) - Microprofile Metrics TCK notes
+
+[pmap-equivalent-on-macOS](pmap-equivalent-on-macOS) - The equivalent of pmap on macOS
