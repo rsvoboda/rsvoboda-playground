@@ -116,3 +116,5 @@ Rostislav's Playgroung
 [microprofile-metrics-tck-notes](microprofile-metrics-tck-notes) - Microprofile Metrics TCK notes
 
 [pmap-equivalent-on-macOS](pmap-equivalent-on-macOS) - The equivalent of pmap on macOS
+
+[graal-graalvm-notes](graal-graalvm-notes) - Graal and GraalVM notes
