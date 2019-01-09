@@ -118,3 +118,5 @@ Rostislav's Playgroung
 [pmap-equivalent-on-macOS](pmap-equivalent-on-macOS) - The equivalent of pmap on macOS
 
 [graal-graalvm-notes](graal-graalvm-notes) - Graal and GraalVM notes
+
+[graal-graalvm-performance](graal-graalvm-performance) - Graal and GraalVM performance experiments
