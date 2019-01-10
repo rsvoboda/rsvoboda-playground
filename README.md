@@ -120,3 +120,5 @@ Rostislav's Playgroung
 [graal-graalvm-notes](graal-graalvm-notes) - Graal and GraalVM notes
 
 [graal-graalvm-performance](graal-graalvm-performance) - Graal and GraalVM performance experiments
+
+[maven-dependencies-comparison](maven-dependencies-comparison) - Maven dependencies comparison
