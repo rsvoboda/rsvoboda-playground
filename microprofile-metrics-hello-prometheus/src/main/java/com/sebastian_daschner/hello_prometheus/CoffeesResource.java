@@ -95,6 +95,7 @@ public class CoffeesResource {
     @Path("/add/{numberOfItems}")
     public Response addItems(@PathParam("numberOfItems") String numberOfItems) {
         Metadata metadata = new Metadata("itemsAdded", MetricType.HISTOGRAM);
+        metadata.setReusable(true);
         Histogram histogram = registry.histogram(metadata);
         histogram.update(Long.valueOf(numberOfItems));
         return Response.ok().build();
