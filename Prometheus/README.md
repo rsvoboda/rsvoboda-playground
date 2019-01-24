@@ -216,3 +216,13 @@ prometheus-2.4.3.darwin-amd64/prometheus --config.file=prom.yml
 http://localhost:9090/graph?g0.range_input=1h&g0.expr=base%3Aclassloader_total_loaded_class_count&g0.tab=0
 
 http://localhost:9090/graph?g0.range_input=1h&g0.expr=base%3Aclassloader_total_loaded_class_count&g0.tab=0&g1.range_input=1h&g1.expr=base%3Athread_count&g1.tab=0&g2.range_input=1h&g2.expr=base%3Amemory_committed_heap_bytes&g2.tab=0&g3.range_input=1h&g3.expr=base%3Amemory_used_heap_bytes&g3.tab=0&g4.range_input=1h&g4.expr=base%3Amemory_max_heap_bytes&g4.tab=0
+
+
+## Experiment with WildFly Subsystem Metrics
+Using WildFly build from https://github.com/wildfly/wildfly/pull/11949 related branch, Prometheus v2.7.0-rc.1.
+
+Prometheus displays one metric per chart, so 2 charts for `wildfly_undertow_bytes_received_bytes` and `wildfly_undertow_bytes_sent_bytes`
+* http://localhost:9090/graph?g0.range_input=1h&g0.expr=wildfly_undertow_bytes_received_bytes&g0.tab=0&g1.range_input=1h&g1.expr=wildfly_undertow_bytes_sent_bytes%20%20&g1.tab=0
+
+Using workaround from https://github.com/prometheus/prometheus/issues/39#issuecomment-305183333 to have 2 metrics in one chart:
+* http://localhost:9090/graph?g0.range_input=1h&g0.expr=%7B__name__%3D~%22wildfly_undertow_bytes_sent_bytes%7Cwildfly_undertow_bytes_received_bytes%7Cwildfly_io_max_pool_size%22%7D&g0.tab=0
