@@ -220,6 +220,7 @@ http://localhost:9090/graph?g0.range_input=1h&g0.expr=base%3Aclassloader_total_l
 
 ## Experiment with WildFly Subsystem Metrics
 Using WildFly build from https://github.com/wildfly/wildfly/pull/11949 related branch, Prometheus v2.7.0-rc.1.
+Started with `wildfly-16.0.0.Beta1-SNAPSHOT/bin/standalone.sh -Dwildfly.statistics-enabled=true` command, accessed http://localhost:8080/ and https://localhost:8443/ several times.
 
 Prometheus displays one metric per chart, so 2 charts for `wildfly_undertow_bytes_received_bytes` and `wildfly_undertow_bytes_sent_bytes`
 * http://localhost:9090/graph?g0.range_input=1h&g0.expr=wildfly_undertow_bytes_received_bytes&g0.tab=0&g1.range_input=1h&g1.expr=wildfly_undertow_bytes_sent_bytes%20%20&g1.tab=0
