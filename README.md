@@ -122,3 +122,5 @@ Rostislav's Playgroung
 [graal-graalvm-performance](graal-graalvm-performance) - Graal and GraalVM performance experiments
 
 [maven-dependencies-comparison](maven-dependencies-comparison) - Maven dependencies comparison
+
+[dependency-updates-output](dependency-updates-output) - Analysis of versions:display-dependency-updates output
