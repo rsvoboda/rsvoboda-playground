@@ -29,6 +29,7 @@ function processLine {
     fi
 
     echo "$DIFF_PREFIX $GROUP:$ARTIFACT $FROM $TO"
+    ## echo "$DIFF_PREFIX,$GROUP:$ARTIFACT,$FROM,$TO"
 }
 
 file=${1:-"dependency-updates.txt"}

@@ -123,4 +123,6 @@ Rostislav's Playgroung
 
 [maven-dependencies-comparison](maven-dependencies-comparison) - Maven dependencies comparison
 
-[dependency-updates-output](dependency-updates-output) - Analysis of versions:display-dependency-updates output
+[maven-dependency-updates](maven-dependency-updates) - Analysis of Maven versions:display-dependency-updates output
+
+[maven-modules-info](maven-modules-info) - Lists info about Maven project modules
