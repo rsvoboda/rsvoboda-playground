@@ -33,5 +33,4 @@ for i in `find $dir | grep pom.xml$ | sort`; do
   fi
 done
 
-echo ""
 echo "SUM,,$SUM_SOURCES,,$SUM_TESTS"
