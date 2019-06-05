@@ -128,3 +128,5 @@ Rostislav's Playgroung
 [maven-modules-info](maven-modules-info) - Lists info about Maven project modules
 
 [docker-compose-quarkus-infinispan](docker-compose-quarkus-infinispan) - Docker-compose file for Quarkus Infinispan Quickstart
+
+[ubi8-experiment](ubi8-experiment) - UBI 8 experiment
