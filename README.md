@@ -130,3 +130,5 @@ Rostislav's Playgroung
 [docker-compose-quarkus-infinispan](docker-compose-quarkus-infinispan) - Docker-compose file for Quarkus Infinispan Quickstart
 
 [ubi8-experiment](ubi8-experiment) - UBI 8 experiment
+
+[profiling-in-macOS](profiling-in-macOS) - Profiling applications in macOS
