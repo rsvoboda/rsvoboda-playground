@@ -132,3 +132,5 @@ Rostislav's Playgroung
 [ubi8-experiment](ubi8-experiment) - UBI 8 experiment
 
 [profiling-in-macOS](profiling-in-macOS) - Profiling applications in macOS
+
+[Jenkinsfile](Jenkinsfile) - Jenkinsfile examples declarative and scripted
