@@ -19,6 +19,18 @@
             <type>pom</type>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreesvg</artifactId>
+            <version>3.4</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>jfreesvg</finalName>
