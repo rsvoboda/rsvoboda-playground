@@ -138,3 +138,5 @@ Rostislav's Playgroung
 [github-markdown-render](github-markdown-render) - Render your .md file to .html using curl and GitHub
 
 [github-api-cli](github-api-cli) - GitHub CLI and APIs
+
+[nativefier](nativefier) - Nativefier
