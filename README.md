@@ -140,3 +140,5 @@ Rostislav's Playgroung
 [github-api-cli](github-api-cli) - GitHub CLI and APIs
 
 [nativefier](nativefier) - Nativefier
+
+[docker-desktop-macos](docker-desktop-macos) - Docker Desktop for macOS
