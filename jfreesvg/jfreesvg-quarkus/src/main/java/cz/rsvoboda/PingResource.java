@@ -3,7 +3,6 @@ package cz.rsvoboda;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -13,7 +12,6 @@ import java.awt.geom.Ellipse2D;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.annotations.XYDrawableAnnotation;
