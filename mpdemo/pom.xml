@@ -22,7 +22,7 @@
     <dependency>
       <groupId>com.nimbusds</groupId>
       <artifactId>nimbus-jose-jwt</artifactId>
-      <version>5.7</version>
+      <version>8.5</version>
       <scope>test</scope>
     </dependency>
     <dependency>
