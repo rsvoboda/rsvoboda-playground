@@ -142,3 +142,5 @@ Rostislav's Playgroung
 [nativefier](nativefier) - Nativefier
 
 [docker-desktop-macos](docker-desktop-macos) - Docker Desktop for macOS
+
+[checks-for-deprecated-bits](checks-for-deprecated-bits) - Checks for deprecated bits
