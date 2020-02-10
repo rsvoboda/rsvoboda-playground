@@ -19,7 +19,7 @@ done | sort | uniq -c
 As I'm on macOS I use gsed (GNU sed) command instead of built in sed command.
 
 ## Deprecated bits in the build log
-This assumes existence of `~/Downloads/build-log.txt` file, for example created using ` of `mvn -V clean install -DskipTests -DskipITs | tee ~/Downloads/build-log.txt` command
+This assumes existence of `~/Downloads/build-log.txt` file, for example created using of `mvn -V clean install -DskipTests -DskipITs | tee ~/Downloads/build-log.txt` command
 
 Maven build produces warnings about usage of deprecated classes and methods, to get to the core of the warning you can use following command:
 ```bash
