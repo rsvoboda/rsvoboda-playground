@@ -144,3 +144,5 @@ Rostislav's Playgroung
 [docker-desktop-macos](docker-desktop-macos) - Docker Desktop for macOS
 
 [checks-for-deprecated-bits](checks-for-deprecated-bits) - Checks for deprecated bits
+
+[quarkus-qs-on-crc](quarkus-qs-on-crc) - Quarkus Quickstart on CRC
