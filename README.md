@@ -146,3 +146,5 @@ Rostislav's Playgroung
 [checks-for-deprecated-bits](checks-for-deprecated-bits) - Checks for deprecated bits
 
 [quarkus-qs-on-crc](quarkus-qs-on-crc) - Quarkus Quickstart on CRC
+
+[quarkus-extensions-combinations](quarkus-extensions-combinations) - Combinations of Quarkus extensions
