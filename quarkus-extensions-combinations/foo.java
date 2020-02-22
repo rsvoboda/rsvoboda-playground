@@ -113,20 +113,21 @@ public class foo {
                 " -DprojectVersion=1.0.0-SNAPSHOT -DplatformArtifactId=quarkus-bom -DclassName=\"io.quarkus.qe.MyResource\"" +
                 " -Dextensions=\"" + extensionsList.toString() + "\"";
 
-        String compileProjectCommand = "mvn clean verify -DskipTests -DskipITs -f " + artifactId.toString() + "/pom.xml";
-        String testProjectCommand = "mvn clean verify -f " + artifactId.toString() + "/pom.xml";
+        String compileProjectCommand = "mvn package -DskipTests -DskipITs -f " + artifactId.toString() + "/pom.xml";
+        String testProjectCommand = "mvn verify -f " + artifactId.toString() + "/pom.xml";
+        String cleanProjectCommand = "mvn clean -f " + artifactId.toString() + "/pom.xml";
 
         executeCommandForArtifact(artifactId, generateProjectCommand, generateProjectStatuses);
         executeCommandForArtifact(artifactId, compileProjectCommand, compileProjectStatuses);
         executeCommandForArtifact(artifactId, testProjectCommand, testProjectStatuses);
+        executeCommand(cleanProjectCommand);
     }
 
-    private static void executeCommandForArtifact(StringBuilder artifactId, String testProjectCommand, Map<String, Integer> commandStatuses) {
-        System.out.println(testProjectCommand);
+    private static void executeCommandForArtifact(StringBuilder artifactId, String command, Map<String, Integer> commandStatuses) {
+        System.out.println(command);
         try {
             ProcessBuilder processBuilder = new ProcessBuilder();
-            processBuilder.command("bash", "-c", testProjectCommand);
-            // processBuilder.directory(new File("/tmp"));
+            processBuilder.command("bash", "-c", command);
             Process mvnGenerateProcess = processBuilder.start();
 
 //            BufferedReader reader = new BufferedReader(new InputStreamReader(mvnGenerateProcess.getInputStream()));
@@ -138,6 +139,15 @@ public class foo {
             int exitCode = mvnGenerateProcess.waitFor();
             commandStatuses.put(artifactId.toString(), exitCode);
             System.out.println("\tExited with error code: " + exitCode);
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    private static void executeCommand(String command) {
+        try {
+            ProcessBuilder processBuilder = new ProcessBuilder("bash", "-c", command);
+            Process process = processBuilder.start();
+            int exitCode = process.waitFor();
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
