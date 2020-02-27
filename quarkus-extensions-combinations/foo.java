@@ -7,11 +7,11 @@ public class foo {
 
     static String[] extensions = new String[] {
             "agroal",
-            "artemis-jms",
+            // "artemis-jms",
             "config-yaml",
-           "core",
+        //    "core",
            "elytron-security",
-           "gizmo",
+        //    "gizmo",
            "hibernate-orm",
            "hibernate-orm-panache",
            "hibernate-validator",
@@ -29,7 +29,7 @@ public class foo {
            "narayana-jta",
            "oidc",
            "quartz",
-           "reactive-pg-client",
+        //    "reactive-pg-client",
            "rest-client",
            "resteasy",
            "resteasy-jackson",
