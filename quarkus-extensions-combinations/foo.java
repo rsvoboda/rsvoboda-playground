@@ -1,14 +1,18 @@
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class foo {
 
     static String[] extensions = new String[] {
-            "agroal",
-            // "artemis-jms",
-            "config-yaml",
+        //    "agroal",
+        //    "artemis-jms",
+        //    "config-yaml",
         //    "core",
            "elytron-security",
         //    "gizmo",
@@ -55,14 +59,41 @@ public class foo {
             "vertx"
     };
 
+    static String applicationPropertiesContent = "# Configuration file\n" +
+        "# key = value\n" +
+        "\n" +
+        "# MP JWT\n" +
+        "mp.jwt.verify.publickey=asd\n" +
+        "mp.jwt.verify.publickey.location=/foo/bar\n" +
+        "\n" +
+        "# Flyway minimal config properties\n" +
+        "quarkus.flyway.migrate-at-start=false\n" +
+        "\n" +
+        "# Flyway needs to configure a datasource\n" +
+        "quarkus.datasource.url: jdbc:postgresql://localhost:5432/mydatabase\n" +
+        "quarkus.datasource.driver: org.postgresql.Driver\n" +
+        "quarkus.datasource.username: sarah\n" +
+        "quarkus.datasource.password: connor\n" +
+        "\n" +
+        "# Kafka\n" +
+        "quarkus.kafka-streams.application-id=002-quarkus-all-extensions\n" +
+        "quarkus.kafka-streams.topics=kafka-topic\n" +
+        "\n" +
+        "quarkus.artemis.url=foo\n" +
+        "\n" +
+        "quarkus.oauth2.client-id=client_id\n" +
+        "quarkus.oauth2.client-secret=secret\n" +
+        "quarkus.oauth2.introspection-url=http://oauth-server/introspect";
+
     static Map<String, Integer> generateProjectStatuses = new TreeMap<>();
     static Map<String, Integer> compileProjectStatuses = new TreeMap<>();
     static Map<String, Integer> testProjectStatuses = new TreeMap<>();
 
     public static void main(String[] args) {
         int arrayLength = extensions.length;
-        for (int i = 1; i <= arrayLength; i++) {
-            combinations(arrayLength, i);
+        // for (int i = 1; i <= arrayLength; i++) {
+        for (int i = 2; i <= 3; i++) {
+                combinations(arrayLength, i);
             System.out.println("  ===  ===  ===  ===  ===  ===  ===");
         }
 
@@ -118,9 +149,18 @@ public class foo {
         String cleanProjectCommand = "mvn clean -f " + artifactId.toString() + "/pom.xml";
 
         executeCommandForArtifact(artifactId, generateProjectCommand, generateProjectStatuses);
+        writeApplicationProperties(Paths.get(artifactId.toString() + "/src/main/resources/application.properties"));
         executeCommandForArtifact(artifactId, compileProjectCommand, compileProjectStatuses);
         executeCommandForArtifact(artifactId, testProjectCommand, testProjectStatuses);
         executeCommand(cleanProjectCommand);
+    }
+
+    private static void writeApplicationProperties(Path path) {
+        try {
+            Files.write(path, applicationPropertiesContent.getBytes(StandardCharsets.UTF_8));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void executeCommandForArtifact(StringBuilder artifactId, String command, Map<String, Integer> commandStatuses) {
