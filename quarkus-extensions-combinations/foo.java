@@ -1,4 +1,6 @@
 import java.io.File;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -66,19 +68,6 @@ public class foo {
         "mp.jwt.verify.publickey=asd\n" +
         "mp.jwt.verify.publickey.location=/foo/bar\n" +
         "\n" +
-        "# Flyway minimal config properties\n" +
-        "quarkus.flyway.migrate-at-start=false\n" +
-        "\n" +
-        "# Flyway needs to configure a datasource\n" +
-        "quarkus.datasource.url: jdbc:postgresql://localhost:5432/mydatabase\n" +
-        "quarkus.datasource.driver: org.postgresql.Driver\n" +
-        "quarkus.datasource.username: sarah\n" +
-        "quarkus.datasource.password: connor\n" +
-        "\n" +
-        "# Kafka\n" +
-        "quarkus.kafka-streams.application-id=002-quarkus-all-extensions\n" +
-        "quarkus.kafka-streams.topics=kafka-topic\n" +
-        "\n" +
         "quarkus.artemis.url=foo\n" +
         "\n" +
         "quarkus.oauth2.client-id=client_id\n" +
@@ -92,10 +81,11 @@ public class foo {
     public static void main(String[] args) {
         int arrayLength = extensions.length;
         // for (int i = 1; i <= arrayLength; i++) {
-        for (int i = 2; i <= 3; i++) {
-                combinations(arrayLength, i);
-            System.out.println("  ===  ===  ===  ===  ===  ===  ===");
-        }
+        // for (int i = 2; i <= 3; i++) {
+        //         combinations(arrayLength, i);
+        //     System.out.println("  ===  ===  ===  ===  ===  ===  ===");
+        // }
+        combinations(arrayLength, 2);
 
         for (Map.Entry<String, Integer> entry : generateProjectStatuses.entrySet()) {
             System.out.println(entry.getKey() + "\t\t : " + entry.getValue().toString() +
@@ -148,10 +138,13 @@ public class foo {
         String testProjectCommand = "mvn verify -f " + artifactId.toString() + "/pom.xml";
         String cleanProjectCommand = "mvn clean -f " + artifactId.toString() + "/pom.xml";
 
-        executeCommandForArtifact(artifactId, generateProjectCommand, generateProjectStatuses);
+        executeCommandForArtifact(artifactId, generateProjectCommand, generateProjectStatuses,
+            Paths.get(artifactId.toString() + "-generateProjectStatuses.log"));
         writeApplicationProperties(Paths.get(artifactId.toString() + "/src/main/resources/application.properties"));
-        executeCommandForArtifact(artifactId, compileProjectCommand, compileProjectStatuses);
-        executeCommandForArtifact(artifactId, testProjectCommand, testProjectStatuses);
+        executeCommandForArtifact(artifactId, compileProjectCommand, compileProjectStatuses,
+            Paths.get(artifactId.toString() + "-compileProjectStatuses.log"));
+        executeCommandForArtifact(artifactId, testProjectCommand, testProjectStatuses,
+            Paths.get(artifactId.toString() + "-testProjectStatuses.log"));
         executeCommand(cleanProjectCommand);
     }
 
@@ -163,18 +156,21 @@ public class foo {
         }
     }
 
-    private static void executeCommandForArtifact(StringBuilder artifactId, String command, Map<String, Integer> commandStatuses) {
+    private static void executeCommandForArtifact(StringBuilder artifactId, String command, Map<String, Integer> commandStatuses, Path logPath) {
         System.out.println(command);
         try {
             ProcessBuilder processBuilder = new ProcessBuilder();
             processBuilder.command("bash", "-c", command);
             Process mvnGenerateProcess = processBuilder.start();
 
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(mvnGenerateProcess.getInputStream()));
-//            String line;
-//            while ((line = reader.readLine()) != null) {
-//                System.out.println(line);
-//            }
+            BufferedReader reader = new BufferedReader(new InputStreamReader(mvnGenerateProcess.getInputStream()));
+            String line;
+            StringBuilder sb = new StringBuilder();
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+                sb.append("\n");
+            }
+            Files.write(logPath, sb.toString().getBytes(StandardCharsets.UTF_8));
 
             int exitCode = mvnGenerateProcess.waitFor();
             commandStatuses.put(artifactId.toString(), exitCode);
