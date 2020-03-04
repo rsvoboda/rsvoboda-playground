@@ -85,7 +85,7 @@ public class foo {
         //         combinations(arrayLength, i);
         //     System.out.println("  ===  ===  ===  ===  ===  ===  ===");
         // }
-        combinations(arrayLength, 2);
+        combinations(arrayLength, 3);
 
         for (Map.Entry<String, Integer> entry : generateProjectStatuses.entrySet()) {
             System.out.println(entry.getKey() + "\t\t : " + entry.getValue().toString() +
