@@ -30,10 +30,10 @@ public class foo {
            "jsonb",
            "jsonp",
            "kafka-client",
-           "keycloak-authorization",
-           "kubernetes",
+        //    "keycloak-authorization", //https://github.com/quarkusio/quarkus/issues/7561
+           "quarkus-kubernetes",
            "narayana-jta",
-           "oidc",
+        //    "oidc",  //https://github.com/quarkusio/quarkus/issues/7561
            "quartz",
         //    "reactive-pg-client",
            "rest-client",
