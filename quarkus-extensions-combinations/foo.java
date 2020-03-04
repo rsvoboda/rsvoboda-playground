@@ -166,6 +166,8 @@ public class foo {
             BufferedReader reader = new BufferedReader(new InputStreamReader(mvnGenerateProcess.getInputStream()));
             String line;
             StringBuilder sb = new StringBuilder();
+            sb.append(command);
+            sb.append("\n\n");
             while ((line = reader.readLine()) != null) {
                 sb.append(line);
                 sb.append("\n");
