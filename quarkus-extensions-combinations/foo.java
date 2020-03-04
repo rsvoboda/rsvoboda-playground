@@ -87,11 +87,17 @@ public class foo {
         // }
         combinations(arrayLength, 3);
 
+        int numberOfFailures = 0;
         for (Map.Entry<String, Integer> entry : generateProjectStatuses.entrySet()) {
+            numberOfFailures = numberOfFailures + entry.getValue() + compileProjectStatuses.get(entry.getKey()) + testProjectStatuses.get(entry.getKey());
             System.out.println(entry.getKey() + "\t\t : " + entry.getValue().toString() +
                     "\t\t : " + compileProjectStatuses.get(entry.getKey()) +
                     "\t\t : " + testProjectStatuses.get(entry.getKey())
                     );
+        }
+        System.out.println("Number of failures: " + numberOfFailures);
+        if (numberOfFailures > 0) {
+            System.exit(1);
         }
     }
 
