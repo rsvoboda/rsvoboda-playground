@@ -148,3 +148,5 @@ Rostislav's Playgroung
 [quarkus-qs-on-crc](quarkus-qs-on-crc) - Quarkus Quickstart on CRC
 
 [quarkus-extensions-combinations](quarkus-extensions-combinations) - Combinations of Quarkus extensions
+
+[macos-and-additional-dns](macos-and-additional-dns) - macOS and additional DNS definition for certain namespace
