@@ -43,5 +43,11 @@ index ae6ffd7..0d5c635 100644
           - targets: ['metrics:9171']
 ```
 
-Grafana dashboard definition: [GitHubStats-Quarkus-3x3-plus-1x2.json](GitHubStats-Quarkus-3x3-plus-1x2.json)
-Dashboard installation steps: https://github.com/vegasbrianc/github-monitoring#manual-install-dashboard
+Quarkus Dashboard
+ - Grafana dashboard definition: [GitHubStats-Quarkus-3x3-plus-1x2.json](GitHubStats-Quarkus-3x3-plus-1x2.json)
+ - Dashboard installation steps: https://github.com/vegasbrianc/github-monitoring#manual-install-dashboard
+
+GitHub exporter details
+ - Available metrics: https://github.com/infinityworks/github-exporter/blob/master/METRICS.md
+ - Number of API queries remaining in the current window: http://localhost:9090/graph?g0.range_input=1h&g0.expr=github_rate_remaining&g0.tab=0
+ - Exposed metrics: http://localhost:9171/metrics
