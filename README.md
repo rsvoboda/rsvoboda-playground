@@ -152,3 +152,5 @@ Rostislav's Playgroung
 [macos-and-additional-dns](macos-and-additional-dns) - macOS and additional DNS definition for certain namespace
 
 [github-monitoring](github-monitoring) - Monitoring of GitHub projects using Prometheus and Grafana
+
+[quarkus-extension-details](quarkus-extension-details) - Quarkus extension details via curl / jq magic
