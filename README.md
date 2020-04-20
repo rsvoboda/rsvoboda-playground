@@ -154,3 +154,5 @@ Rostislav's Playgroung
 [github-monitoring](github-monitoring) - Monitoring of GitHub projects using Prometheus and Grafana
 
 [quarkus-extension-details](quarkus-extension-details) - Quarkus extension details via curl / jq magic
+
+[bom-get-defined-deps](bom-get-defined-deps) - List defined dependencies in BOM
