@@ -156,3 +156,5 @@ Rostislav's Playgroung
 [quarkus-extension-details](quarkus-extension-details) - Quarkus extension details via curl / jq magic
 
 [bom-get-defined-deps](bom-get-defined-deps) - List defined dependencies in BOM
+
+[deploy-folder-to-artifactory](deploy-folder-to-artifactory) - Deploy folder to Artifactory
