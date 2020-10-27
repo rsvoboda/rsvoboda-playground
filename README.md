@@ -158,3 +158,5 @@ Rostislav's Playgroung
 [bom-get-defined-deps](bom-get-defined-deps) - List defined dependencies in BOM
 
 [deploy-folder-to-artifactory](deploy-folder-to-artifactory) - Deploy folder to Artifactory
+
+[kodi](kodi) - Run addon on Kodi startup
