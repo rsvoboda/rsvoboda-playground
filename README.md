@@ -160,3 +160,5 @@ Rostislav's Playgroung
 [deploy-folder-to-artifactory](deploy-folder-to-artifactory) - Deploy folder to Artifactory
 
 [kodi](kodi) - Run addon on Kodi startup
+
+[macOS-quarantined-apps](macOS-quarantined-apps) - How to run macOS quarantined apps / downloaded from internet
