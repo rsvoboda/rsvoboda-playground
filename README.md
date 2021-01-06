@@ -164,3 +164,5 @@ Rostislav's Playgroung
 [macOS-quarantined-apps](macOS-quarantined-apps) - How to run macOS quarantined apps / downloaded from internet
 
 [macOS-BLE-scan](macOS-BLE-scan) - How to find Bluetooth Low-Energy devices using macOS
+
+[home-assistant](home-assistant) - Home Assistant Notes
