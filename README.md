@@ -166,3 +166,5 @@ Rostislav's Playgroung
 [macOS-BLE-scan](macOS-BLE-scan) - How to find Bluetooth Low-Energy devices using macOS
 
 [home-assistant](home-assistant) - Home Assistant Notes
+
+[spring-di-quarkus] (spring-di-quarkus) - Spring DI and Quarkus - Converting existing Spring DI code to use Quarkus
