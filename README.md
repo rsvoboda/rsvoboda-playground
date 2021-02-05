@@ -168,3 +168,5 @@ Rostislav's Playgroung
 [home-assistant](home-assistant) - Home Assistant Notes
 
 [spring-di-quarkus] (spring-di-quarkus) - Spring DI and Quarkus - Converting existing Spring DI code to use Quarkus
+
+[quarkus-and-scylladb] (quarkus-and-scylladb) - ScyllaDB and Quarkus integration
