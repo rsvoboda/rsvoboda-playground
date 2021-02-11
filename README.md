@@ -172,3 +172,5 @@ Rostislav's Playgroung
 [quarkus-and-scylladb] (quarkus-and-scylladb) - ScyllaDB and Quarkus integration
 
 [github-actions-exporter](github-actions-exporter) - Building custom github-actions-exporter to disable runners metrics
+
+[rhel8-docker-compose-limits](rhel8-docker-compose-limits) - Configure limits on RHEL8 using docker-compose
