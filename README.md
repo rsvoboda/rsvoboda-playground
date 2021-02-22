@@ -174,3 +174,5 @@ Rostislav's Playgroung
 [github-actions-exporter](github-actions-exporter) - Building custom github-actions-exporter to disable runners metrics
 
 [rhel8-docker-compose-limits](rhel8-docker-compose-limits) - Configure limits on RHEL8 using docker-compose
+
+[opencv-with-quarkus](opencv-with-quarkus) - OpenCV with Quarkus - get image from your webcam via JAX-RS endpoint
