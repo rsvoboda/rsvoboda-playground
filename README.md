@@ -176,3 +176,5 @@ Rostislav's Playgroung
 [rhel8-docker-compose-limits](rhel8-docker-compose-limits) - Configure limits on RHEL8 using docker-compose
 
 [opencv-with-quarkus](opencv-with-quarkus) - OpenCV with Quarkus - get image from your webcam via JAX-RS endpoint
+
+[macOS-terminal-setup](macOS-terminal-setup) - macOS - terminal setup
