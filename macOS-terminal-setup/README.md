@@ -16,3 +16,6 @@
 
 ## Screenshot
 ![zsh + iTerm2 + Powerline fonts](Screenshot.png)
+
+## Adjust system limits - open files limits
+https://gist.github.com/tombigel/d503800a282fcadbee14b537735d202c
