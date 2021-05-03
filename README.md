@@ -178,3 +178,5 @@ Rostislav's Playgroung
 [opencv-with-quarkus](opencv-with-quarkus) - OpenCV with Quarkus - get image from your webcam via JAX-RS endpoint
 
 [macOS-terminal-setup](macOS-terminal-setup) - macOS - terminal setup
+
+[unify-dream-machine](unify-dream-machine) - UniFi Dream Machine (UDM) hacks
