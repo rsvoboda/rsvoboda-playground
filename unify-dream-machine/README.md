@@ -26,3 +26,7 @@ Applications related to UDM
  - https://github.com/Art-of-WiFi/UniFi-API-browser
  - https://github.com/NickWaterton/Unifi-websocket-interface
    - change https://github.com/NickWaterton/Unifi-websocket-interface/blob/master/unifi_client.py#L143 to True
+
+API endpoints on the UniFi controller
+ - https://ubntwiki.com/products/software/unifi-controller/api
+ - https://github.com/ameyuuno/docker-unifi-led-light-switch/blob/master/scripts/unifi-led-switch.sh
