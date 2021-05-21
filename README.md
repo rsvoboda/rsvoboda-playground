@@ -180,3 +180,5 @@ Rostislav's Playgroung
 [macOS-terminal-setup](macOS-terminal-setup) - macOS - terminal setup
 
 [unify-dream-machine](unify-dream-machine) - UniFi Dream Machine (UDM) hacks
+
+[quarkus-gizmo-generate-no-args-constructor] - Quarkus / Gizmo - generate no-args constructor
