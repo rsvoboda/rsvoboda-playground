@@ -21,3 +21,8 @@ Follow-up links:
  - https://github.com/pbrah/eap_proxy-udmpro
  - https://github.com/wicol/unifi-dns
  - https://github.com/fabianishere/udm-kernel-tools
+
+Applications related to UDM
+ - https://github.com/Art-of-WiFi/UniFi-API-browser
+ - https://github.com/NickWaterton/Unifi-websocket-interface
+   - change https://github.com/NickWaterton/Unifi-websocket-interface/blob/master/unifi_client.py#L143 to True
