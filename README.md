@@ -182,3 +182,5 @@ Rostislav's Playgroung
 [unify-dream-machine](unify-dream-machine) - UniFi Dream Machine (UDM) hacks
 
 [quarkus-gizmo-generate-no-args-constructor] - Quarkus / Gizmo - generate no-args constructor
+
+[wrk2] - wrk2 on macOS
