@@ -184,3 +184,5 @@ Rostislav's Playgroung
 [quarkus-gizmo-generate-no-args-constructor] - Quarkus / Gizmo - generate no-args constructor
 
 [wrk2] - wrk2 on macOS
+
+[tilde-key-mapping] - Tilde key mapping on Logitech MX Keys
