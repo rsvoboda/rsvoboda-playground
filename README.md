@@ -186,3 +186,5 @@ Rostislav's Playgroung
 [wrk2] - wrk2 on macOS
 
 [tilde-key-mapping] - Tilde key mapping on Logitech MX Keys
+
+[OpenShift-Docker-research] - Research to expose Docker capabilities via OpenShift
