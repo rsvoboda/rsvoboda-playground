@@ -167,9 +167,9 @@ Rostislav's Playgroung
 
 [home-assistant](home-assistant) - Home Assistant Notes
 
-[spring-di-quarkus] (spring-di-quarkus) - Spring DI and Quarkus - Converting existing Spring DI code to use Quarkus
+[spring-di-quarkus](spring-di-quarkus) - Spring DI and Quarkus - Converting existing Spring DI code to use Quarkus
 
-[quarkus-and-scylladb] (quarkus-and-scylladb) - ScyllaDB and Quarkus integration
+[quarkus-and-scylladb](quarkus-and-scylladb) - ScyllaDB and Quarkus integration
 
 [github-actions-exporter](github-actions-exporter) - Building custom github-actions-exporter to disable runners metrics
 
@@ -181,10 +181,10 @@ Rostislav's Playgroung
 
 [unify-dream-machine](unify-dream-machine) - UniFi Dream Machine (UDM) hacks
 
-[quarkus-gizmo-generate-no-args-constructor] - Quarkus / Gizmo - generate no-args constructor
+[quarkus-gizmo-generate-no-args-constructor](quarkus-gizmo-generate-no-args-constructor) - Quarkus / Gizmo - generate no-args constructor
 
-[wrk2] - wrk2 on macOS
+[wrk2](wrk2) - wrk2 on macOS
 
-[tilde-key-mapping] - Tilde key mapping on Logitech MX Keys
+[tilde-key-mapping](tilde-key-mapping) - Tilde key mapping on Logitech MX Keys
 
-[OpenShift-Docker-research] - Research to expose Docker capabilities via OpenShift
+[OpenShift-Docker-research](OpenShift-Docker-research) - Research to expose Docker capabilities via OpenShift
