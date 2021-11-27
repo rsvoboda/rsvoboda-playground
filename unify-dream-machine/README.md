@@ -30,3 +30,21 @@ Applications related to UDM
 API endpoints on the UniFi controller
  - https://ubntwiki.com/products/software/unifi-controller/api
  - https://github.com/ameyuuno/docker-unifi-led-light-switch/blob/master/scripts/unifi-led-switch.sh
+
+Traffic Analysis and Flows Tracking
+ - https://www.ntop.org/products/traffic-analysis/ntop/
+ - https://github.com/tusc/ntopng-udm#installing
+ - https://github.com/tusc/ntopng-udm#uninstalling + `rm -rf /mnt/data/ntopng`
+ - a lot of details, all-in-one solution makes UDM and CPU fan quite busy
+
+Works nicely with `on-boot-script` from `udm-utilities` repo, `30-ntopng.sh` example:
+```bash
+#!/bin/sh
+CONTAINER=ntopng
+
+if podman container exists ${CONTAINER}; then
+  podman start ${CONTAINER}
+else
+  logger -s -t ntopng -p ERROR Container $CONTAINER not found, make sure you set the proper name
+fi
+```
