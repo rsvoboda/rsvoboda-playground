@@ -56,3 +56,33 @@ Homebridge on UDM
  - https://awesomeopensource.com/projects/homebridge
  - https://awesomeopensource.com/project/naofireblade/homebridge-weather-plus
  - https://github.com/sahilchaddha/awesome-homebridge
+
+Pi-hole on UDM
+ - https://github.com/boostchicken/udm-utilities/tree/master/run-pihole
+ - https://www.smarthomebeginner.com/pi-hole-setup-guide/
+ - https://discourse.pi-hole.net/
+ - https://v.firebog.net/hosts/lists.php
+
+```bash
+curl -L https://raw.githubusercontent.com/boostchicken/udm-utilities/master/cni-plugins/05-install-cni-plugins.sh -o /mnt/data/on_boot.d/05-install-cni-plugins.sh
+curl -L https://raw.githubusercontent.com/boostchicken/udm-utilities/master/dns-common/on_boot.d/10-dns.sh -o /mnt/data/on_boot.d/10-dns.sh
+curl -L https://raw.githubusercontent.com/boostchicken/udm-utilities/master/cni-plugins/20-dns.conflist -o /mnt/data/podman/cni/20-dns.conflist
+
+## Create network as mentioned in the guide, edit 10-dns.sh and 20-dns.conflist to use 10.20.5.3 address
+
+podman network ls
+podman run -d --network dns --restart always \
+    --name pihole \
+    -e TZ="Europe/Prague" \
+    -v "/mnt/data/etc-pihole/:/etc/pihole/" \
+    -v "/mnt/data/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
+    --dns=127.0.0.1 \
+    --dns=1.1.1.1 \
+    --dns=8.8.8.8 \
+    --hostname pi.hole \
+    -e VIRTUAL_HOST="pi.hole" \
+    -e PROXY_LOCATION="pi.hole" \
+    -e ServerIP="10.20.5.3" \
+    -e IPv6="False" \
+    pihole/pihole:latest
+```
