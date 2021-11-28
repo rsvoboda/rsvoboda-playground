@@ -48,3 +48,11 @@ else
   logger -s -t ntopng -p ERROR Container $CONTAINER not found, make sure you set the proper name
 fi
 ```
+
+Homebridge on UDM
+ - https://github.com/boostchicken/udm-utilities/tree/master/homebridge
+   - make sure `.conflist` is linked into `/etc/cni/net.d/` before running `podman` command
+   - https://github.com/boostchicken/udm-utilities/blob/master/homebridge/on_boot.d/25-homebridge.sh#L15
+ - https://awesomeopensource.com/projects/homebridge
+ - https://awesomeopensource.com/project/naofireblade/homebridge-weather-plus
+ - https://github.com/sahilchaddha/awesome-homebridge
