@@ -86,3 +86,13 @@ podman run -d --network dns --restart always \
     -e IPv6="False" \
     pihole/pihole:latest
 ```
+
+## UnPoller
+Telemetry and Observability for your UniFi Network.
+Nice Grafana dashboards with a lot of (both wired and wireless) networking details.
+
+ - https://unpoller.com/docs/install/gettingstarted#configuring-the-controller
+ - https://unpoller.com/docs/install/dockercompose#installation
+ - https://unpoller.com/docs/dependencies/influxdb/#post-setup
+ - https://unpoller.com/docs/install/grafana/
+ - https://grafana.com/grafana/dashboards/?search=unifi-poller
