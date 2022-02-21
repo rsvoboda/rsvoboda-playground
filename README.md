@@ -188,3 +188,5 @@ Rostislav's Playgroung
 [tilde-key-mapping](tilde-key-mapping) - Tilde key mapping on Logitech MX Keys
 
 [OpenShift-Docker-research](OpenShift-Docker-research) - Research to expose Docker capabilities via OpenShift
+
+[macos-virtual-camera-removal](macos-virtual-camera-removal) - macOS virtual camera removal
