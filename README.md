@@ -190,3 +190,5 @@ Rostislav's Playgroung
 [OpenShift-Docker-research](OpenShift-Docker-research) - Research to expose Docker capabilities via OpenShift
 
 [macos-virtual-camera-removal](macos-virtual-camera-removal) - macOS virtual camera removal
+
+[qute-multimodule](qute-multimodule) - Quarkus Qute multi module project
