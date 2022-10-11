@@ -1,4 +1,6 @@
-# Run add-on on Kodi startup
+# Kodi/LibreELEC tips and trics
+
+## Run add-on on Kodi startup
 
 autoexec.py:
 ```python
@@ -12,3 +14,7 @@ Tried with `LibreELEC (official): 9.2.4 (RPi2.arm)`, Kodi version 18.8
 
 Userdata approach is deprecated and was removed in https://github.com/xbmc/xbmc/pull/18356.
 Future releases of Kodi will use https://kodi.wiki/view/Autoexec_Service approach.
+
+## Modify the video cache
+ - https://kodi.wiki/view/Advancedsettings.xml
+ - https://kodi.wiki/view/HOW-TO:Modify_the_video_cache
