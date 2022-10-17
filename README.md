@@ -192,3 +192,5 @@ Rostislav's Playgroung
 [macos-virtual-camera-removal](macos-virtual-camera-removal) - macOS virtual camera removal
 
 [qute-multimodule](qute-multimodule) - Quarkus Qute multi module project
+
+[java-info-files-props] (java-info-files-props) - Get info from Java code about files in direcory, properties, etc.
