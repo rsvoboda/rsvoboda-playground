@@ -251,5 +251,21 @@ wildfly_undertow_request_count_total{deployment="helloworld-ws.war"}
 rate(wildfly_undertow_request_count_total{deployment="helloworld-ws.war"}[2h])
  ```
 
+### CPU monitoring
+ - https://github.com/prometheus/node_exporter
+ - https://prometheus.io/docs/guides/node-exporter/
+ - https://www.robustperception.io/understanding-machine-cpu-usage/
+
+Queries:
+```
+rate(node_cpu_seconds_total{mode="system"}[1m])
+rate(node_cpu_seconds_total{job="node_exporter"}[1m])
+sum by (mode, instance) (rate(node_cpu_seconds_total{job="node_exporter"}[1m]))
+100 - (avg by (instance) (rate(node_cpu_seconds_total{job="node_exporter",mode="idle"}[1m])) * 100)
+```
+
+Notes:
+ - Can't properly monitor CPU when running node_exporter from container
+
 ### Links
  * https://www.robustperception.io/how-does-a-prometheus-counter-work
