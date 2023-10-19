@@ -194,3 +194,5 @@ Rostislav's Playgroung
 [qute-multimodule](qute-multimodule) - Quarkus Qute multi module project
 
 [java-info-files-props] (java-info-files-props) - Get info from Java code about files in direcory, properties, etc.
+
+[disk-usage] - Disk usage tools
