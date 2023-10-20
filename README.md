@@ -193,8 +193,8 @@ Rostislav's Playgroung
 
 [qute-multimodule](qute-multimodule) - Quarkus Qute multi module project
 
-[java-info-files-props] (java-info-files-props) - Get info from Java code about files in direcory, properties, etc.
+[java-info-files-props](java-info-files-props) - Get info from Java code about files in direcory, properties, etc.
 
-[disk-usage] - Disk usage tools
+[disk-usage](disk-usage) - Disk usage tools
 
-[podman-on-macos] - Podman on macOS
+[podman-on-macos](podman-on-macos) - Podman on macOS
