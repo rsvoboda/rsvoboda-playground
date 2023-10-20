@@ -196,3 +196,5 @@ Rostislav's Playgroung
 [java-info-files-props] (java-info-files-props) - Get info from Java code about files in direcory, properties, etc.
 
 [disk-usage] - Disk usage tools
+
+[podman-on-macos] - Podman on macOS
