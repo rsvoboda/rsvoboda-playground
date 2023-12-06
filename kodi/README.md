@@ -18,3 +18,15 @@ Future releases of Kodi will use https://kodi.wiki/view/Autoexec_Service approac
 ## Modify the video cache
  - https://kodi.wiki/view/Advancedsettings.xml
  - https://kodi.wiki/view/HOW-TO:Modify_the_video_cache
+
+### LibreELEC config for RPi5
+/storage/.kodi/userdata/advancedsettings.xml
+```xml
+<advancedsettings>
+  <cache>
+    <buffermode>1</buffermode>
+    <memorysize>1073741824</memorysize>
+    <readfactor>20</readfactor>
+  </cache>
+</advancedsettings>
+```
