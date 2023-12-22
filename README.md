@@ -198,3 +198,5 @@ Rostislav's Playgroung
 [disk-usage](disk-usage) - Disk usage tools
 
 [podman-on-macos](podman-on-macos) - Podman on macOS
+
+[jdk-flight-recorder](jdk-flight-recorder) - JDK Flight Recorder
