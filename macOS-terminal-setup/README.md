@@ -3,6 +3,7 @@
 ## iTerm2
  - https://iterm2.com/
  - https://formulae.brew.sh/cask/iterm2
+ - https://iterm2.com/documentation-smart-selection.html
 
 ## Powerline
 - https://github.com/b-ryan/powerline-shell 
