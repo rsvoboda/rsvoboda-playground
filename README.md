@@ -200,3 +200,5 @@ Rostislav's Playgroung
 [podman-on-macos](podman-on-macos) - Podman on macOS
 
 [jdk-flight-recorder](jdk-flight-recorder) - JDK Flight Recorder
+
+[ascii-table](ascii-table) - ASCII Tables for Java
