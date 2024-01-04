@@ -202,3 +202,5 @@ Rostislav's Playgroung
 [jdk-flight-recorder](jdk-flight-recorder) - JDK Flight Recorder
 
 [ascii-table](ascii-table) - ASCII Tables for Java
+
+[github-user-metrics](github-user-metrics) - Metrics for GitHub users
