@@ -204,3 +204,5 @@ Rostislav's Playgroung
 [ascii-table](ascii-table) - ASCII Tables for Java
 
 [github-user-metrics](github-user-metrics) - Metrics for GitHub users
+
+[profiling-java](profiling-java) - Profiling Java applications
