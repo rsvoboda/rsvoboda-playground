@@ -17,3 +17,16 @@ java --enable-preview --source 22 -XX:StartFlightRecording=name=Profiling,filena
 /Applications/JDK\ Mission\ Control.app/Contents/MacOS/jmc
  and open recording.jfr / nmt-recording.jfr
 ```
+
+## Run JDK Mission Control directly from Applications
+Edit `JDK Mission Control.app/Contents/Info.plist` to point to JDK location
+```
+...
+    <array>
+      <string>-keyring</string>
+      <string>~/.eclipse_keyring</string>
+      <string>-vm</string>
+      <string>/Users/rsvoboda/.sdkman/candidates/java/21.0.2-tem/bin/java</string>
+    </array>
+...
+```
