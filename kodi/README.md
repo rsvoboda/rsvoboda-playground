@@ -30,3 +30,15 @@ Future releases of Kodi will use https://kodi.wiki/view/Autoexec_Service approac
   </cache>
 </advancedsettings>
 ```
+
+### Kodi config for macOS
+Create file `~/Library/Application\ Support/Kodi/userdata/advancedsettings.xml` with content:
+```xml
+<advancedsettings>
+  <cache>
+    <buffermode>1</buffermode>
+    <memorysize>1073741824</memorysize>
+    <readfactor>20</readfactor>
+  </cache>
+</advancedsettings>
+```
