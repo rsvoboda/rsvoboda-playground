@@ -208,3 +208,5 @@ Rostislav's Playgroung
 [profiling-java](profiling-java) - Profiling Java applications
 
 [sboms](sboms) - SBOM Analysis
+
+[java-jit-c1-c2-gc](java-jit-c1-c2-gc) - Java HotSpot, JIT compilers, Garbage Collection
