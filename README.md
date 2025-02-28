@@ -210,3 +210,5 @@ Rostislav's Playgroung
 [sboms](sboms) - SBOM Analysis
 
 [java-jit-c1-c2-gc](java-jit-c1-c2-gc) - Java HotSpot, JIT compilers, Garbage Collection
+
+[ai-tools](ai-tools) - AI tools
